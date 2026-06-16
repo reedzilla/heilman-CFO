@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Group — CFO Read-Out Summary</title>
+<style>
+  :root{
+    --ink:#11161d; --mut:#5b6675; --line:#d8dee6; --soft:#f4f6f9;
+    --grn:#1a7f37; --grnbg:#e7f4ec; --acc:#0a5bd3; --accbg:#e8f0fd;
+    --amber:#9a6700; --amberbg:#fbf3e0; --red:#b42318;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,sans-serif;
+    font-size:12px;line-height:1.4}
+  .page{max-width:830px;margin:0 auto;padding:30px 34px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px}
+  .brand h1{font-size:19px;margin:0;font-weight:700;letter-spacing:-.01em}
+  .brand .loc{font-size:11px;color:var(--mut);margin-top:2px}
+  .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--grn);text-align:right}
+  .tag b{display:block;color:var(--ink);font-size:11px;letter-spacing:.06em}
+  .lede{font-size:11.5px;color:var(--mut);margin:10px 0 14px;line-height:1.5}
+  .lede b{color:var(--ink)}
+
+  .levers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  .lever{border:1px solid var(--line);border-radius:8px;padding:12px 13px;position:relative}
+  .lever .n{position:absolute;top:-9px;left:11px;width:18px;height:18px;border-radius:50%;
+    background:var(--ink);color:#fff;font-size:10px;font-weight:700;display:flex;
+    align-items:center;justify-content:center;font-family:var(--mono)}
+  .lever h3{font-size:12px;margin:4px 0 2px;font-weight:700}
+  .lever .sub{font-size:10px;color:var(--mut);margin-bottom:9px}
+  .lever .hero{font-family:var(--mono);font-size:21px;font-weight:700;line-height:1}
+  .lever .heroSub{font-size:10px;color:var(--mut);margin-top:2px}
+  .lever.l1 .hero{color:var(--grn)}
+  .lever.l2 .hero{color:var(--acc)}
+  .lever.l3 .hero{color:var(--amber)}
+  .lever ul{margin:9px 0 0;padding-left:14px;color:var(--ink)}
+  .lever li{font-size:10px;margin:3px 0;color:var(--mut)}
+  .lever li b{color:var(--ink)}
+
+  .combo{margin:14px 0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .combo .top{background:var(--soft);padding:10px 14px;display:flex;
+    justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+  .combo .top .l{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+  .combo .top .v{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--grn)}
+  .combo .bars{padding:11px 14px}
+  .brow{display:flex;align-items:center;gap:10px;margin:5px 0}
+  .brow .k{width:118px;font-size:10px;color:var(--mut);text-align:right}
+  .bar{height:17px;border-radius:3px;display:flex;align-items:center;padding:0 7px;
+    font-family:var(--mono);font-size:9.5px;font-weight:700;color:#fff}
+  .bar.b1{background:var(--grn)}
+  .bar.b2{background:var(--amber)}
+  .bar.b3{background:var(--acc)}
+
+  .twocol{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin-top:4px}
+  .box h4{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);
+    margin:0 0 6px;border-bottom:1px solid var(--line);padding-bottom:4px}
+  .seq{counter-reset:s;margin:0;padding:0;list-style:none}
+  .seq li{font-size:11px;margin:5px 0;padding-left:22px;position:relative;line-height:1.4}
+  .seq li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;
+    width:15px;height:15px;border-radius:50%;background:var(--ink);color:#fff;
+    font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono)}
+  .seq li b{color:var(--ink)}
+  .seq li span{color:var(--mut)}
+  .compliance{background:var(--amberbg);border:1px solid #ecd9a8;border-radius:7px;
+    padding:10px 12px;font-size:10px;color:#5c4708;line-height:1.5}
+  .compliance b{color:var(--amber);text-transform:uppercase;letter-spacing:.05em;font-size:9.5px}
+
+  .foot{margin-top:14px;border-top:1px solid var(--line);padding-top:8px;
+    font-size:9px;color:var(--mut);font-family:var(--mono);line-height:1.5}
+
+  @media print{
+    @page{size:letter portrait;margin:0}
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{padding:22px 30px;max-width:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand">
+      <h1>Heilman Auto Group</h1>
+      <div class="loc">Ardmore · West Chester · Hatboro, PA &nbsp;·&nbsp; Est. 1986</div>
+    </div>
+    <div class="tag">
+      <b>CFO Read-Out</b>
+      Margin Recovery Brief
+    </div>
+  </header>
+
+  <div class="lede">
+    Three independent levers, each modeled on conservative inputs. <b>Two require zero capital and can move this week.</b>
+    The numbers below are directional and assumption-driven — every figure is adjustable in the live calculators and should be
+    re-run against real RO, payroll, and parts-invoice data before final commitment.
+  </div>
+
+  <div class="levers">
+    <div class="lever l1">
+      <div class="n">1</div>
+      <h3>Labor Rate Correction</h3>
+      <div class="sub">$139 → $169 / hr</div>
+      <div class="hero">+$432K</div>
+      <div class="heroSub">per year · +$36K/mo</div>
+      <ul>
+        <li><b>~100% margin</b> — no added parts or labor cost</li>
+        <li>14,400 billed hrs × $30 uplift</li>
+        <li>Same wrenches, same bays</li>
+        <li>Needs: portal + ELR proof to defend</li>
+      </ul>
+    </div>
+
+    <div class="lever l3">
+      <div class="n">2</div>
+      <h3>Shop Supplies Fee</h3>
+      <div class="sub">7% of labor · capped $40</div>
+      <div class="hero">+$140K</div>
+      <div class="heroSub">per year · +$11.7K/mo</div>
+      <ul>
+        <li><b>Zero CapEx — live this week</b></li>
+        <li>Recovers consumables invisibly</li>
+        <li>Kills $3 nickel-and-dime friction</li>
+        <li>Trust win + margin in one move</li>
+      </ul>
+    </div>
+
+    <div class="lever l2">
+      <div class="n">3</div>
+      <h3>Tekmetric (vs. Pen &amp; Paper)</h3>
+      <div class="sub">$1,500/mo · 3 locations</div>
+      <div class="hero">8.3 days</div>
+      <div class="heroSub">to pay for itself / month</div>
+      <ul>
+        <li><b>$3.61 back on every $1</b></li>
+        <li>+$47K/yr net — labor recovery alone</li>
+        <li>Bulletproof PA-compliant audit trail</li>
+        <li>Idle-bay + collections = pure upside</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="combo">
+    <div class="top">
+      <div class="l">Combined annual opportunity — directional, separate levers, no double-count</div>
+      <div class="v">~$619K / yr</div>
+    </div>
+    <div class="bars">
+      <div class="brow"><div class="k">Labor Rate</div><div class="bar b1" style="width:70%">+ $432,000</div></div>
+      <div class="brow"><div class="k">Shop Supplies</div><div class="bar b2" style="width:23%">+ $140,400</div></div>
+      <div class="brow"><div class="k">Tekmetric (net)</div><div class="bar b3" style="width:9%">+ $47,052</div></div>
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="box">
+      <h4>Execution Sequence</h4>
+      <ol class="seq">
+        <li><b>Shop Supplies Fee — this week.</b> <span>No capital, immediate margin + goodwill. Disclose as its own RO line.</span></li>
+        <li><b>Tekmetric eval — start now.</b> <span>The platform that captures unbilled labor, automates the supplies fee, and creates the PA audit trail. Pays for itself by the 9th.</span></li>
+        <li><b>Labor rate to $169 — once portal + ELR proof are in hand.</b> <span>The big dollar lever; the digital front door is what justifies premium pricing.</span></li>
+      </ol>
+    </div>
+    <div class="box">
+      <h4>Non-Negotiable: PA Compliance</h4>
+      <div class="compliance">
+        <b>Itemize or lose.</b><br>
+        Every estimate must be exact, itemized, and carry documented pre-authorization. A disputed handwritten, unsigned
+        estimate loses 100% of the time. The shop-supplies fee must appear as its own disclosed line. Tekmetric's
+        timestamped digital authorization converts this liability into an asset.
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    All currency computed in integer cents — no floating-point error. Figures assume 9 productive techs, 50–52 working weeks,
+    600 ROs/mo across 3 locations; replace with live shop data before commitment. Levers are independent and additive at the
+    stated assumptions; consumables recovery is counted once (Shop Supplies), excluded from the Tekmetric figure to avoid double-count.
+    &nbsp;|&nbsp; Prepared by CFO Agent · Heilman Auto Group
+  </div>
+</div>
+</body>
+</html>

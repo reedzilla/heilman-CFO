@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Group — Labor Rate Diagnostic</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --line:#2b3340;
+    --ink:#e6edf3; --mut:#8b97a7; --grn:#3fb950; --grn2:#2ea043;
+    --red:#f85149; --amber:#d29922; --acc:#58a6ff;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    font-size:15px;line-height:1.45;padding:24px}
+  .wrap{max-width:980px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--grn);
+    text-transform:uppercase}
+  h1{font-size:22px;margin:6px 0 2px;font-weight:650}
+  .sub{color:var(--mut);font-size:13px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .card h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);
+    margin:0 0 14px;font-weight:600}
+  label{display:block;font-size:13px;color:var(--mut);margin:0 0 4px}
+  .row{margin-bottom:14px}
+  input[type=number]{width:100%;background:var(--panel2);border:1px solid var(--line);
+    color:var(--ink);border-radius:7px;padding:9px 11px;font-family:var(--mono);font-size:15px}
+  input[type=number]:focus{outline:none;border-color:var(--acc)}
+  input[type=range]{width:100%;accent-color:var(--grn);margin-top:6px}
+  .rate-display{font-family:var(--mono);font-size:28px;color:var(--grn);font-weight:600}
+  .rate-cur{font-family:var(--mono);font-size:15px;color:var(--mut)}
+  .readout{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:20px;margin-top:22px}
+  .readout h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grn);
+    margin:0 0 16px;font-weight:600}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.metrics{grid-template-columns:1fr}}
+  .metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .metric .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .metric .val{font-family:var(--mono);font-size:24px;font-weight:600;margin-top:6px}
+  .metric.delta .val{color:var(--grn)}
+  .metric.year .val{color:var(--acc)}
+  .bar-wrap{margin-top:20px}
+  .bar-line{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .bar-line .tag{width:130px;font-size:12px;color:var(--mut);text-align:right}
+  .bar{height:26px;border-radius:5px;display:flex;align-items:center;padding:0 10px;
+    font-family:var(--mono);font-size:13px;color:#06140a;font-weight:600;min-width:60px;
+    transition:width .25s ease}
+  .bar.cur{background:#56607288;color:var(--ink)}
+  .bar.new{background:linear-gradient(90deg,var(--grn2),var(--grn))}
+  .foot{margin-top:18px;font-size:12px;color:var(--mut);font-family:var(--mono);
+    border-top:1px dashed var(--line);padding-top:12px}
+  .hl{color:var(--amber)}
+  .note{font-size:12px;color:var(--mut);margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">● CFO Agent // Diagnostic Read-Out</div>
+    <h1>Effective Labor Rate — Revenue Recovery Model</h1>
+    <div class="sub">Heilman Auto Group · Ardmore · West Chester · Hatboro &nbsp;|&nbsp; Adjust inputs to your real shop numbers. All math in integer cents.</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Shop Inputs</h2>
+      <div class="row">
+        <label>Productive technicians (all locations)</label>
+        <input type="number" id="techs" value="9" min="1" step="1">
+      </div>
+      <div class="row">
+        <label>Avg BILLED hours / tech / week</label>
+        <input type="number" id="hours" value="32" min="1" step="1">
+        <div class="note">Billed flagged hours — not clocked. 32 = 80% proficiency on a 40-hr week.</div>
+      </div>
+      <div class="row">
+        <label>Working weeks / year</label>
+        <input type="number" id="weeks" value="50" min="1" max="52" step="1">
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Rate Scenario</h2>
+      <div class="row">
+        <label>Current posted labor rate</label>
+        <div class="rate-cur" id="curLbl">$139.00 / hr</div>
+        <input type="number" id="cur" value="139" min="50" step="1" style="margin-top:6px">
+      </div>
+      <div class="row">
+        <label>Proposed labor rate</label>
+        <div class="rate-display" id="newLbl">$169 / hr</div>
+        <input type="range" id="newRate" min="139" max="200" value="169" step="1">
+        <div class="note">Target band: <span class="hl">$160–$180/hr</span> — in line with the local affluent-market rate.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="readout">
+    <h2>▸ Revenue Recovery — What $139 Is Costing</h2>
+    <div class="metrics">
+      <div class="metric">
+        <div class="lbl">Annual billed hours</div>
+        <div class="val" id="totHours">14,400</div>
+      </div>
+      <div class="metric delta">
+        <div class="lbl">Added revenue / month</div>
+        <div class="val" id="perMonth">$36,000</div>
+      </div>
+      <div class="metric year">
+        <div class="lbl">Added revenue / year</div>
+        <div class="val" id="perYear">$432,000</div>
+      </div>
+    </div>
+
+    <div class="bar-wrap">
+      <div class="bar-line">
+        <div class="tag">Current @ <span id="t1">$139</span></div>
+        <div class="bar cur" id="barCur" style="width:70%">$2,001,600</div>
+      </div>
+      <div class="bar-line">
+        <div class="tag">Proposed @ <span id="t2">$169</span></div>
+        <div class="bar new" id="barNew" style="width:85%">$2,433,600</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      DELTA = billed_hrs × (proposed − current). &nbsp; Same labor, same wrenches, same bays.
+      The gap is pure recovered gross margin — it does not require selling one additional hour.
+    </div>
+  </div>
+
+  <p class="note" style="text-align:center;margin-top:18px">
+    Per-hour rate increase carries ~100% margin: no added parts cost, no added labor cost. This is the highest-leverage lever on the board.
+  </p>
+</div>
+
+<script>
+// ---- integer-cents engine: never float currency ----
+const $=id=>document.getElementById(id);
+function fmt(cents){
+  const d=Math.round(cents/100);
+  return '$'+d.toLocaleString('en-US');
+}
+function fmtRate(cents){
+  return '$'+(cents/100).toFixed(2);
+}
+function calc(){
+  const techs=Math.max(0,parseInt($('techs').value)||0);
+  const hours=Math.max(0,parseFloat($('hours').value)||0);
+  const weeks=Math.max(0,parseInt($('weeks').value)||0);
+  const curC=Math.round((parseFloat($('cur').value)||0)*100);   // cents/hr
+  const newC=Math.round((parseInt($('newRate').value)||0)*100); // cents/hr
+
+  // total billed hours/year — keep hours as number, multiply rate-cents
+  const totHours=techs*hours*weeks;
+
+  const curRev=Math.round(totHours*curC);   // cents
+  const newRev=Math.round(totHours*newC);   // cents
+  const deltaYr=newRev-curRev;              // cents
+  const deltaMo=Math.round(deltaYr/12);     // cents
+
+  $('curLbl').textContent=fmtRate(curC)+' / hr';
+  $('newLbl').textContent='$'+(newC/100).toFixed(0)+' / hr';
+  $('t1').textContent='$'+(curC/100).toFixed(0);
+  $('t2').textContent='$'+(newC/100).toFixed(0);
+
+  $('totHours').textContent=totHours.toLocaleString('en-US');
+  $('perMonth').textContent=fmt(deltaMo);
+  $('perYear').textContent=fmt(deltaYr);
+
+  $('barCur').textContent=fmt(curRev);
+  $('barNew').textContent=fmt(newRev);
+  const maxRev=Math.max(curRev,newRev,1);
+  $('barCur').style.width=(curRev/maxRev*100).toFixed(1)+'%';
+  $('barNew').style.width=(newRev/maxRev*100).toFixed(1)+'%';
+}
+['techs','hours','weeks','cur','newRate'].forEach(id=>{
+  $(id).addEventListener('input',calc);
+});
+calc();
+</script>
+</body>
+</html>

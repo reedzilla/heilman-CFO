@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Group — Shop Supplies Fee Model</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --line:#2b3340;
+    --ink:#e6edf3; --mut:#8b97a7; --grn:#3fb950; --grn2:#2ea043;
+    --red:#f85149; --amber:#d29922; --acc:#58a6ff;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    font-size:15px;line-height:1.45;padding:24px}
+  .wrap{max-width:980px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--grn);
+    text-transform:uppercase}
+  h1{font-size:22px;margin:6px 0 2px;font-weight:650}
+  .sub{color:var(--mut);font-size:13px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .card h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);
+    margin:0 0 14px;font-weight:600}
+  label{display:block;font-size:13px;color:var(--mut);margin:0 0 4px}
+  .row{margin-bottom:14px}
+  input[type=number]{width:100%;background:var(--panel2);border:1px solid var(--line);
+    color:var(--ink);border-radius:7px;padding:9px 11px;font-family:var(--mono);font-size:15px}
+  input[type=number]:focus{outline:none;border-color:var(--acc)}
+  input[type=range]{width:100%;accent-color:var(--grn);margin-top:6px}
+  .big{font-family:var(--mono);font-size:28px;color:var(--grn);font-weight:600}
+  .readout{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:20px;margin-top:22px}
+  .readout h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grn);
+    margin:0 0 16px;font-weight:600}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.metrics{grid-template-columns:1fr}}
+  .metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .metric .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .metric .val{font-family:var(--mono);font-size:22px;font-weight:600;margin-top:6px}
+  .metric.net .val{color:var(--grn)}
+  .metric.year .val{color:var(--acc)}
+  .metric.warn .val{color:var(--amber)}
+  .flag{margin-top:18px;font-family:var(--mono);font-size:13px;padding:11px 13px;border-radius:7px;
+    border:1px solid var(--line);background:var(--panel)}
+  .flag.ok{border-color:#1f6f33;color:var(--grn)}
+  .flag.under{border-color:#7a5b12;color:var(--amber)}
+  .flag.cap{border-color:#2b4a6b;color:var(--acc)}
+  .foot{margin-top:16px;font-size:12px;color:var(--mut);font-family:var(--mono);
+    border-top:1px dashed var(--line);padding-top:12px}
+  .hl{color:var(--amber)}
+  .note{font-size:12px;color:var(--mut);margin-top:6px}
+  .per-ro{display:flex;justify-content:space-between;align-items:baseline;
+    padding:7px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:14px}
+  .per-ro:last-child{border-bottom:none}
+  .per-ro .k{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">● CFO Agent // Diagnostic Read-Out</div>
+    <h1>Shop Supplies Fee — Trust Arbitrage Model</h1>
+    <div class="sub">Heilman Auto Group · Ardmore · West Chester · Hatboro &nbsp;|&nbsp; Find the % + cap that nets consumables cost to zero while you give away the $3 top-offs. Integer-cents engine, fee % in basis points.</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Volume & Cost Inputs</h2>
+      <div class="row">
+        <label>Repair Orders / month (all locations)</label>
+        <input type="number" id="ros" value="600" min="1" step="1">
+      </div>
+      <div class="row">
+        <label>Avg LABOR revenue / RO</label>
+        <input type="number" id="labor" value="450" min="0" step="1">
+        <div class="note">Fee is a % of labor only — not parts, per PA itemization norms.</div>
+      </div>
+      <div class="row">
+        <label>True consumables cost / RO</label>
+        <input type="number" id="cons" value="12" min="0" step="0.25">
+        <div class="note">Real cost of top-off fluids, rags, cleaners, gloves you currently nickel-and-dime.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Fee Scenario</h2>
+      <div class="row">
+        <label>Shop supplies fee — % of labor</label>
+        <div class="big" id="pctLbl">7.0%</div>
+        <input type="range" id="pct" min="0" max="120" value="70" step="1">
+        <div class="note">Slider in 0.1% steps. Target band: <span class="hl">5–8%</span>.</div>
+      </div>
+      <div class="row">
+        <label>Hard cap / RO</label>
+        <input type="number" id="cap" value="40" min="0" step="1">
+        <div class="note">Caps the fee on big-labor tickets so it never feels predatory.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="readout">
+    <h2>▸ Per-Repair-Order Breakdown</h2>
+    <div class="per-ro"><span class="k">Fee from % of labor</span><span id="rawFee">$31.50</span></div>
+    <div class="per-ro"><span class="k">Fee actually charged (after cap)</span><span id="chargedFee">$31.50</span></div>
+    <div class="per-ro"><span class="k">Consumables cost recovered</span><span id="consOut">– $12.00</span></div>
+    <div class="per-ro"><span class="k">Net margin / RO</span><span id="netRo" style="color:var(--grn)">$19.50</span></div>
+
+    <div class="flag ok" id="flag">RECOVERED: Fee covers consumables with $19.50/RO left over. Goodwill is free.</div>
+
+    <div class="metrics" style="margin-top:18px">
+      <div class="metric">
+        <div class="lbl">Break-even fee %</div>
+        <div class="val warn" id="bep">2.7%</div>
+      </div>
+      <div class="metric net">
+        <div class="lbl">Net margin / month</div>
+        <div class="val" id="perMonth">$11,700</div>
+      </div>
+      <div class="metric year">
+        <div class="lbl">Net margin / year</div>
+        <div class="val" id="perYear">$140,400</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      charged = min( round(labor¢ × bp ÷ 10000), cap¢ ) &nbsp;·&nbsp; net = charged − consumables¢ &nbsp;·&nbsp; monthly = net × ROs.
+      The $3 washer-fluid line item disappears; the structural fee recovers cost invisibly.
+    </div>
+  </div>
+
+  <p class="note" style="text-align:center;margin-top:18px">
+    PA compliance: the shop-supplies fee MUST be disclosed and itemized as its own line. Disclosed-and-capped is compliant. Vague-and-floating is not.
+  </p>
+</div>
+
+<script>
+// ---- integer-cents engine: never float currency. fee % held in basis points. ----
+const $=id=>document.getElementById(id);
+function fmt(cents){return '$'+Math.round(cents/100).toLocaleString('en-US');}
+function fmt2(cents){
+  const neg=cents<0; cents=Math.abs(cents);
+  const s='$'+(cents/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  return neg?'– '+s:s;
+}
+function calc(){
+  const ros=Math.max(0,parseInt($('ros').value)||0);
+  const laborC=Math.round((parseFloat($('labor').value)||0)*100); // cents
+  const consC=Math.round((parseFloat($('cons').value)||0)*100);   // cents
+  const bp=Math.round((parseInt($('pct').value)||0)*10);          // slider 70 -> 7.0% -> 700 bp
+  const capC=Math.round((parseFloat($('cap').value)||0)*100);     // cents
+
+  const pctTxt=(bp/100).toFixed(1)+'%';
+  $('pctLbl').textContent=pctTxt;
+
+  const rawFee=Math.round(laborC*bp/10000);     // cents, integer
+  const charged=Math.min(rawFee,capC);          // cents
+  const netRo=charged-consC;                    // cents
+  const monthly=netRo*ros;                      // cents
+  const yearly=monthly*12;                       // cents
+
+  // break-even bp: charged == consC  ->  bp = consC*10000/laborC
+  let bepTxt='—';
+  if(laborC>0){
+    const bepBp=Math.ceil(consC*10000/laborC);
+    bepTxt=(bepBp/100).toFixed(1)+'%';
+  }
+
+  $('rawFee').textContent=fmt2(rawFee);
+  $('chargedFee').textContent=fmt2(charged);
+  $('consOut').textContent=fmt2(-consC);
+  $('netRo').textContent=fmt2(netRo);
+  $('netRo').style.color=netRo>=0?'var(--grn)':'var(--red)';
+  $('bep').textContent=bepTxt;
+  $('perMonth').textContent=fmt(monthly);
+  $('perYear').textContent=fmt(yearly);
+
+  const f=$('flag');
+  if(netRo<0){
+    f.className='flag under';
+    f.textContent='UNDERWATER: Fee does not cover consumables. Raise % above the break-even of '+bepTxt+'.';
+  }else if(charged===capC && rawFee>capC){
+    f.className='flag cap';
+    f.textContent='CAP ACTIVE: % would charge '+fmt2(rawFee)+' but cap holds it at '+fmt2(capC)+'. Net '+fmt2(netRo)+'/RO. Protects customer trust on big tickets.';
+  }else{
+    f.className='flag ok';
+    f.textContent='RECOVERED: Fee covers consumables with '+fmt2(netRo)+'/RO left over. Goodwill is free.';
+  }
+}
+['ros','labor','cons','pct','cap'].forEach(id=>$(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

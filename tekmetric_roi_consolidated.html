@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Group — Tekmetric ROI (Consolidated)</title>
+<style>
+  :root{
+    --bg:#0d1117; --panel:#161b22; --panel2:#1c2330; --line:#2b3340;
+    --ink:#e6edf3; --mut:#8b97a7; --grn:#3fb950; --grn2:#2ea043;
+    --red:#f85149; --amber:#d29922; --acc:#58a6ff;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    font-size:15px;line-height:1.45;padding:24px}
+  .wrap{max-width:980px;margin:0 auto}
+  header{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:22px}
+  .badge{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--grn);
+    text-transform:uppercase}
+  h1{font-size:22px;margin:6px 0 2px;font-weight:650}
+  .sub{color:var(--mut);font-size:13px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px}
+  .card h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);
+    margin:0 0 14px;font-weight:600}
+  .card.leak h2{color:var(--amber)}
+  label{display:block;font-size:13px;color:var(--mut);margin:0 0 4px}
+  .row{margin-bottom:13px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  input[type=number]{width:100%;background:var(--panel2);border:1px solid var(--line);
+    color:var(--ink);border-radius:7px;padding:9px 11px;font-family:var(--mono);font-size:15px}
+  input[type=number]:focus{outline:none;border-color:var(--acc)}
+  .note{font-size:12px;color:var(--mut);margin-top:4px}
+  .hl{color:var(--amber)}
+  .hero{background:linear-gradient(180deg,#13241a,#161b22);border:1px solid #1f6f33;
+    border-radius:12px;padding:24px;margin-top:22px;text-align:center}
+  .hero .lbl{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--grn)}
+  .hero .big{font-family:var(--mono);font-size:54px;font-weight:700;color:var(--grn);
+    margin:6px 0 0;line-height:1}
+  .hero .unit{font-family:var(--mono);font-size:18px;color:var(--mut)}
+  .hero .cap{font-size:13px;color:var(--ink);margin-top:10px}
+  .readout{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+    padding:20px;margin-top:18px}
+  .readout h2{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--grn);
+    margin:0 0 14px;font-weight:600}
+  .ledger .line{display:flex;justify-content:space-between;align-items:baseline;
+    padding:9px 0;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:14px}
+  .ledger .line:last-child{border-bottom:none}
+  .ledger .k{color:var(--mut)}
+  .ledger .plus{color:var(--grn)}
+  .ledger .minus{color:var(--red)}
+  .ledger .tot{font-weight:700;font-size:16px}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  @media(max-width:760px){.metrics{grid-template-columns:1fr}}
+  .metric{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px}
+  .metric .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .metric .val{font-family:var(--mono);font-size:22px;font-weight:600;margin-top:6px}
+  .metric.roi .val{color:var(--acc)}
+  .metric.be .val{color:var(--amber)}
+  .upside{margin-top:18px;border:1px dashed var(--line);border-radius:9px;padding:14px 16px}
+  .upside h3{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin:0 0 8px}
+  .upside ul{margin:0;padding-left:18px;color:var(--mut);font-size:13px}
+  .upside li{margin:4px 0}
+  .foot{margin-top:16px;font-size:12px;color:var(--mut);font-family:var(--mono);
+    border-top:1px dashed var(--line);padding-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="badge">● CFO Agent // Consolidated ROI Read-Out</div>
+    <h1>Tekmetric ROI — Days to Payback</h1>
+    <div class="sub">Heilman Auto Group · 3 locations &nbsp;|&nbsp; Conservative defaults. Labor recovery only — consumables are owned by the Shop Supplies tool, so nothing is double-counted. Integer-cents engine.</div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <h2>System Cost</h2>
+      <div class="two">
+        <div class="row">
+          <label>Cost / location / month</label>
+          <input type="number" id="costLoc" value="500" min="0" step="10">
+        </div>
+        <div class="row">
+          <label>Locations</label>
+          <input type="number" id="locs" value="3" min="1" step="1">
+        </div>
+      </div>
+      <div class="note">$500 × 3 = <span class="hl">$1,500/mo</span> · $18,000/yr.</div>
+    </div>
+
+    <div class="card leak">
+      <h2>Unbilled Labor Leakage (conservative)</h2>
+      <div class="two">
+        <div class="row">
+          <label>Productive techs</label>
+          <input type="number" id="techs" value="9" min="0" step="1">
+        </div>
+        <div class="row">
+          <label>Labor rate $/hr</label>
+          <input type="number" id="rate" value="139" min="0" step="1">
+        </div>
+      </div>
+      <div class="two">
+        <div class="row">
+          <label>Lost labor hrs / tech / week</label>
+          <input type="number" id="lostHrs" value="1.0" min="0" step="0.1">
+          <div class="note">Default 1.0 — push it UP to your real number.</div>
+        </div>
+        <div class="row">
+          <label>Working weeks / year</label>
+          <input type="number" id="weeks" value="52" min="1" max="52" step="1">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="lbl">▸ Days into each month until Tekmetric pays for itself</div>
+    <div class="big" id="days">8.3<span class="unit"> days</span></div>
+    <div class="cap" id="daysCap">Paid off by the 9th. The remaining ~22 days of the month are pure recovered margin.</div>
+  </div>
+
+  <div class="readout">
+    <h2>▸ The Ledger — Labor Only</h2>
+    <div class="ledger">
+      <div class="line"><span class="k">Recovered unbilled labor / yr</span><span class="plus" id="recLabor">+ $65,052</span></div>
+      <div class="line"><span class="k">Tekmetric system cost / yr</span><span class="minus" id="sysCost">– $18,000</span></div>
+      <div class="line"><span class="k tot">Net annual gain</span><span class="plus tot" id="netLine">+ $47,052</span></div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric roi">
+        <div class="lbl">Return on every $1 spent</div>
+        <div class="val" id="roi">$3.61</div>
+      </div>
+      <div class="metric be">
+        <div class="lbl">Break-even: lost hrs / mo</div>
+        <div class="val" id="be">10.8 hrs</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">System cost / month</div>
+        <div class="val" id="moCost">$1,500</div>
+      </div>
+    </div>
+
+    <div class="upside">
+      <h3>Not counted here — all of it upside</h3>
+      <ul>
+        <li>Shop-supplies / consumables recovery — owned by the Shop Supplies Fee tool (counted once, there).</li>
+        <li>Idle-bay hours recovered by killing phone-vs-online double-bookings.</li>
+        <li>The PA-compliance dispute you never lose — every authorization signed &amp; timestamped.</li>
+        <li>Faster cash via text-to-pay; lower AR aging.</li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      labor = techs × lostHrs × weeks × rate¢ &nbsp;·&nbsp; days = (monthly cost ÷ monthly recovery) × 30 &nbsp;·&nbsp; net = recovered − cost.
+      Even on labor alone, conservative, the system pays for itself in the first week and a half of every month.
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- integer-cents engine: never float currency. hours/days are durations (decimal ok). ----
+const $=id=>document.getElementById(id);
+function fmt(cents){
+  const neg=cents<0; cents=Math.abs(cents);
+  const s='$'+Math.round(cents/100).toLocaleString('en-US');
+  return neg?'– '+s:s;
+}
+const ORD=n=>{const s=['th','st','nd','rd'],v=n%100;return n+(s[(v-20)%10]||s[v]||s[0]);};
+function calc(){
+  const costLocC=Math.round((parseFloat($('costLoc').value)||0)*100);
+  const locs=Math.max(0,parseInt($('locs').value)||0);
+  const techs=Math.max(0,parseInt($('techs').value)||0);
+  const rateC=Math.round((parseFloat($('rate').value)||0)*100);
+  const lostHrs=Math.max(0,parseFloat($('lostHrs').value)||0);
+  const weeks=Math.max(0,parseInt($('weeks').value)||0);
+
+  const recLaborYr=Math.round(techs*lostHrs*weeks*rateC); // cents/yr
+  const recLaborMo=Math.round(recLaborYr/12);             // cents/mo
+  const sysMo=costLocC*locs;                              // cents/mo
+  const sysYr=sysMo*12;                                   // cents/yr
+  const net=recLaborYr-sysYr;
+
+  // days to payback within a month
+  let days='—', dayCap='—';
+  if(recLaborMo>0){
+    const d=(sysMo/recLaborMo)*30;
+    days=d.toFixed(1);
+    if(d<=31){
+      dayCap='Paid off by the '+ORD(Math.ceil(d))+'. The remaining ~'+Math.max(0,Math.round(30-d))+' days of the month are pure recovered margin.';
+    }else{
+      dayCap='At these inputs the monthly leakage is below the monthly cost — adjust to your real numbers.';
+    }
+  }
+  let roiTxt='—'; if(sysYr>0) roiTxt='$'+(recLaborYr/sysYr).toFixed(2);
+  let beTxt='—'; if(rateC>0) beTxt=(sysMo/rateC).toFixed(1)+' hrs';
+
+  $('days').innerHTML=days+'<span class="unit"> days</span>';
+  $('daysCap').textContent=dayCap;
+  $('recLabor').textContent='+ '+fmt(recLaborYr);
+  $('sysCost').textContent=fmt(-sysYr);
+  $('netLine').textContent=(net>=0?'+ ':'')+fmt(net);
+  $('netLine').className=net>=0?'plus tot':'minus tot';
+  $('roi').textContent=roiTxt;
+  $('be').textContent=beTxt;
+  $('moCost').textContent=fmt(sysMo);
+}
+['costLoc','locs','techs','rate','lostHrs','weeks'].forEach(id=>$(id).addEventListener('input',calc));
+calc();
+</script>
+</body>
+</html>

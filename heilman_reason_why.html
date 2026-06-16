@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Group — The Reason Why</title>
+<style>
+  :root{
+    --ink:#11161d; --mut:#5b6675; --line:#d8dee6; --soft:#f4f6f9;
+    --grn:#1a7f37; --acc:#0a5bd3; --amber:#9a6700; --red:#b42318;
+    --mono:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,sans-serif;
+    font-size:12px;line-height:1.45}
+  .page{max-width:830px;margin:0 auto;padding:30px 34px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:12px}
+  .brand h1{font-size:19px;margin:0;font-weight:700;letter-spacing:-.01em}
+  .brand .loc{font-size:11px;color:var(--mut);margin-top:2px}
+  .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--grn);text-align:right}
+  .tag b{display:block;color:var(--ink);font-size:11px;letter-spacing:.06em}
+  .lede{font-size:11.5px;color:var(--mut);margin:0 0 14px;line-height:1.5}
+
+  .item{border:1px solid var(--line);border-radius:8px;padding:12px 15px 13px;
+    margin-bottom:11px;display:grid;grid-template-columns:24px 1fr;gap:13px;
+    page-break-inside:avoid}
+  .item .n{width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;
+    font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono)}
+  .item h3{font-size:13.5px;margin:2px 0 1px;font-weight:700}
+  .item .move{font-size:10.5px;color:var(--mut);font-family:var(--mono);margin-bottom:7px}
+  .why{font-size:11.5px;line-height:1.5;margin:0 0 7px}
+  .why b{color:var(--ink)}
+  .bl{font-size:11px;border-left:3px solid var(--grn);padding:4px 0 4px 10px;background:var(--soft);
+    border-radius:0 4px 4px 0}
+  .bl b{text-transform:uppercase;letter-spacing:.05em;font-size:9.5px;color:var(--grn);
+    display:block;margin-bottom:1px}
+  .item.l2 .bl{border-color:var(--amber)} .item.l2 .bl b{color:var(--amber)}
+  .item.l3 .bl{border-color:var(--acc)} .item.l3 .bl b{color:var(--acc)}
+  .item.l4 .bl{border-color:var(--red)} .item.l4 .bl b{color:var(--red)}
+  .item.l5 .bl{border-color:var(--mut)} .item.l5 .bl b{color:var(--mut)}
+
+  .foot{margin-top:6px;border-top:1px solid var(--line);padding-top:8px;
+    font-size:9px;color:var(--mut);font-family:var(--mono);line-height:1.5}
+
+  @media print{
+    @page{size:letter portrait;margin:0}
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{padding:20px 30px;max-width:none}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="brand">
+      <h1>Heilman Auto Group</h1>
+      <div class="loc">Ardmore · West Chester · Hatboro, PA &nbsp;·&nbsp; Est. 1986</div>
+    </div>
+    <div class="tag">
+      <b>The Reason Why</b>
+      One justification per move
+    </div>
+  </header>
+
+  <div class="lede">
+    Every recommendation, stripped to the single reason it earns its place. No fluff — the logic an owner can repeat to a skeptical partner.
+  </div>
+
+  <div class="item l1">
+    <div class="n">1</div>
+    <div>
+      <h3>Raise the labor rate — $139 → $169/hr</h3>
+      <div class="move">~100% margin · +$432K/yr</div>
+      <p class="why">
+        $139 trails the going rate in this market. Comparable independent shops across the affluent Main Line and Chester
+        County corridor sit higher, and a brand-new shop in the area opened at $170. A rate increase is the <b>only lever that
+        carries almost no added cost</b>: no extra parts, no extra labor, no extra bay time. It's the highest-margin dollar
+        on the board, and staying at $139 leaves money on the table on every single ticket.
+      </p>
+      <div class="bl"><b>Bottom line</b>New shops in your market price at $170. $139 is below where your own neighborhood already is.</div>
+    </div>
+  </div>
+
+  <div class="item l2">
+    <div class="n">2</div>
+    <div>
+      <h3>Roll fluids into a Shop Supplies Fee — 7% of labor, capped $40</h3>
+      <div class="move">Zero CapEx · +$140K/yr · live this week</div>
+      <p class="why">
+        Charging $3 for washer fluid or a half-quart of oil saves pennies and costs relationships. A customer who feels
+        nickel-and-dimed over consumables walks before the $1,500 brake-and-suspension job. A <b>capped percentage fee
+        recovers the real consumables cost invisibly</b> across the whole ticket, while giving away the minor top-off buys
+        goodwill that pays back many times over. It trades a resentment-generating line item for a structural fee nobody blinks at.
+      </p>
+      <div class="bl"><b>Bottom line</b>Stop winning the $3 fight and losing the $1,500 customer.</div>
+    </div>
+  </div>
+
+  <div class="item l3">
+    <div class="n">3</div>
+    <div>
+      <h3>Adopt Tekmetric — replace pen-and-paper across all 3 shops</h3>
+      <div class="move">$1,500/mo · pays for itself by the 9th · $3.61 back per $1</div>
+      <p class="why">
+        The monthly subscription isn't a cost — it's the cheapest revenue you'll ever buy back. Paper guarantees techs forget
+        to log the last 0.2 hours of diag and cleanup; that leakage alone covers the entire system in the <b>first week and a
+        half of every month</b>. It also kills the phone-vs-online double-bookings that leave bays idle, and it timestamps every
+        digital authorization — turning your single biggest compliance liability into a bulletproof audit trail.
+      </p>
+      <div class="bl"><b>Bottom line</b>Pen-and-paper isn't free. It's the most expensive system in the building.</div>
+    </div>
+  </div>
+
+  <div class="item l4">
+    <div class="n">4</div>
+    <div>
+      <h3>Reprice diagnostics to 1.0 hr of the new rate — and add a Video Evidence protocol</h3>
+      <div class="move">$100 → $160+ · higher close rate on the repair that follows</div>
+      <p class="why">
+        Diag takes your most expensive tools and your most skilled brainpower — charging less than your own labor rate for it
+        devalues the expertise that traces a CAN-bus fault or EVAP leak. Pegging diag to a full hour of the new rate prices the
+        skill correctly. The <b>video is what makes the higher fee unquestionable</b>: when the customer watches the failure on
+        screen, authorization on the recommended repair climbs. The diag fee pays for the brainpower; the video pays for the upsell.
+      </p>
+      <div class="bl"><b>Bottom line</b>Charge for the expertise, then prove it on camera so nobody argues the bill.</div>
+    </div>
+  </div>
+
+  <div class="item l5">
+    <div class="n">5</div>
+    <div>
+      <h3>Upgrade the digital front door — portal, online scheduling, digital authorization</h3>
+      <div class="move">Buy the platform first · custom build only if proven</div>
+      <p class="why">
+        A 2011 WordPress brochure can't justify a $169 rate, can't take a digital authorization, and can't deliver the video or
+        DVI that lifts average repair order. The portal is the <b>enabler underneath every other move</b> — it's what makes
+        premium pricing credible and what makes PA pre-authorization a signed, timestamped record instead of a legal exposure.
+        Buy the proven platform first; only custom-build once the ARO lift is real. First-time-right beats experimental.
+      </p>
+      <div class="bl"><b>Bottom line</b>The modern front door is what lets you charge — and defend — premium prices.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    Prepared by CFO Agent · Heilman Auto Group &nbsp;|&nbsp; Pairs with the Margin Recovery Brief and the three live calculators.
+    Figures are conservative and assumption-driven — re-run against real RO, payroll, and parts-invoice data before final commitment.
+  </div>
+</div>
+</body>
+</html>
