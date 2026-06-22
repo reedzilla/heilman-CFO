@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heilman Auto Service — Honest Auto Repair Since 1986 | Ardmore, West Chester & Hatboro, PA</title>
+<style>
+  :root{
+    --navy:#0e2342;--navy2:#163a66;--ink:#0e2342;--body:#33414f;--steel:#64748b;
+    --line:#e3e8ee;--soft:#f4f7fb;--white:#fff;--red:#c8102e;--red2:#a30d25;
+    --blue:#13386e;--blue2:#1c4f9c;--sky:#9cc0ec;
+    --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--body);line-height:1.6;background:#fff;font-size:16px}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:920px}
+  section{padding:70px 0}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 22px;border-radius:8px;font-size:15px;transition:.15s;border:2px solid var(--red);cursor:pointer}
+  .btn:hover{background:var(--red2);border-color:var(--red2)}
+  .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+  .btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}.btn.blue:hover{background:var(--blue2);border-color:var(--blue2)}
+  .btn.white{background:#fff;color:var(--blue);border-color:#fff}.btn.white:hover{background:#eef3fa}
+  .btn.big{font-size:17px;padding:16px 30px}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}
+  .sec-head{text-align:center;max-width:740px;margin:0 auto 44px}
+  .sec-head h2{font-size:clamp(25px,3.3vw,36px);margin:10px 0 12px}.sec-head p{font-size:17px;color:var(--steel)}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 2px 12px rgba(14,35,66,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .logo img{height:62px;width:auto;display:block}.logo .fallback{display:none;font-size:20px;font-weight:800;color:var(--blue)}
+  .menu{display:flex;align-items:center;gap:24px}
+  .menu a{color:#1f2d3d;font-size:14.5px;font-weight:700}.menu a:hover{color:var(--red)}
+  .menu .btn{color:#fff;padding:11px 20px}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}.burger span{width:26px;height:3px;background:var(--blue);border-radius:2px}
+  .hero{position:relative;color:#fff;overflow:hidden;background:#13386e}
+  .hero .slides{position:absolute;inset:0;z-index:0}
+  .hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease;background-size:cover;background-position:center}
+  .hero .slide.on{opacity:1}
+  .hero .s1{background-color:#13386e;background-image:url('shop-ardmore.jpg')}
+  .hero .s2{background-color:#0e2342;background-image:url('shop-westchester.jpg')}
+  .hero .s3{background-color:#1c4f9c;background-image:url('shop-hatboro.jpg')}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(8,20,40,.74) 0%,rgba(11,30,58,.52) 48%,rgba(19,56,110,.28) 100%)}
+  .hero .locbadge{position:absolute;top:20px;right:24px;z-index:3;background:rgba(200,16,46,.92);color:#fff;font-weight:700;font-size:13px;padding:7px 16px;border-radius:30px}
+  .hero .dots{position:absolute;bottom:20px;left:0;right:0;z-index:3;display:flex;gap:11px;justify-content:center}
+  .hero .dots b{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:.2s}.hero .dots b.on{background:var(--red);transform:scale(1.15)}
+  .hero .wrap{position:relative;z-index:2;padding:96px 24px 96px;max-width:940px}
+  .hero h1{color:#fff;font-size:clamp(34px,5vw,56px);margin:14px 0 18px;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+  .hero h1 .hl{border-bottom:5px solid var(--red);padding-bottom:3px}
+  .hero p.sub{font-size:clamp(17px,2vw,20px);color:#eaf1fa;max-width:700px;margin-bottom:30px;text-shadow:0 1px 10px rgba(0,0,0,.3)}
+  .hero .sig{font-size:15px;color:var(--sky);font-weight:700;margin-bottom:26px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .trustbar{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);font-size:13.5px;color:#cdd9ea;font-weight:600}
+  .trustbar b{color:#fff}.trustbar .dot{color:var(--red)}
+  .quickcall{background:var(--navy);color:#fff;padding:42px 0}
+  .quickcall .head{text-align:center;margin-bottom:26px}.quickcall h2{color:#fff;font-size:clamp(24px,3vw,32px)}.quickcall p{color:var(--sky);font-size:16px;margin-top:6px}
+  .qc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .qc{background:#13294a;border:1px solid #21406e;border-radius:12px;padding:22px;text-align:center}
+  .qc .pin{font-size:24px;margin-bottom:6px}.qc .town{font-size:18px;font-weight:800;color:#fff;margin-bottom:14px}
+  .qc .callbtn{display:block;background:var(--blue2);color:#fff;font-weight:800;font-size:17px;padding:14px;border-radius:9px;border:2px solid var(--blue2)}.qc .callbtn:hover{background:#2563bd}
+  .qc .sched{display:inline-block;margin-top:10px;font-size:13px;color:var(--sky);font-weight:600}.qc .sched:hover{color:#fff}
+  .trustrow{background:#fff;border-bottom:1px solid var(--line);padding:30px 0}
+  .reviewbig{text-align:center;margin-bottom:16px}.reviewbig .stars{color:#f2a93b;font-size:24px;letter-spacing:3px;display:block;margin-bottom:4px}
+  .reviewbig .num{font-weight:800;color:var(--ink);font-size:19px}.reviewbig .num span{color:var(--steel);font-weight:600;font-size:15px}
+  .tbrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 28px}
+  .tb{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--blue);font-size:14px}.tb .ic{color:var(--red);font-size:17px}
+  .diff .story{max-width:780px;margin:0 auto;text-align:center;font-size:16.5px;color:var(--body)}
+  .diff .four{text-align:center;font-size:21px;color:var(--ink);margin:34px 0 4px}
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+  .val{text-align:center;padding:26px 20px;border:1px solid var(--line);border-radius:12px;background:var(--soft);border-top:4px solid var(--red)}
+  .val .vico{width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto 14px;font-weight:900}
+  .val h3{color:var(--blue);font-size:18px}.val p{font-size:13px;color:var(--steel);margin-top:6px}
+  .why{background:var(--soft)}
+  .amen{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .am{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;border-top:4px solid var(--blue)}
+  .am .ai{font-size:28px;margin-bottom:10px}.am h4{font-size:17px;margin-bottom:5px;color:var(--ink)}.am p{font-size:14px;color:var(--steel)}
+  .svc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .scard{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(14,35,66,.05);background:#fff}
+  .scard .cap{height:7px}.scard.s1 .cap{background:var(--blue)}.scard.s2 .cap{background:var(--red)}.scard.s3 .cap{background:var(--blue2)}
+  .scard .bd{padding:26px 24px;display:flex;flex-direction:column;flex:1}
+  .scard h3{font-size:21px;margin-bottom:6px}.scard .tagline{font-size:13px;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+  .scard ul{list-style:none;margin-bottom:20px;flex:1}.scard li{font-size:14.5px;padding:7px 0 7px 26px;position:relative;color:var(--body)}.scard li:before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:900}
+  .scard .btn{text-align:center}
+  .extra{margin-top:30px}.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .panel{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:30px}.panel h3{font-size:20px;margin-bottom:8px}.panel p{color:var(--steel);font-size:14.5px;margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:#fff;border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--blue)}
+  .note{font-size:12.5px;color:var(--steel);margin-top:12px;font-style:italic}
+  .insp{background:var(--navy);color:#fff}.insp .sec-head h2{color:#fff}.insp .sec-head p{color:var(--sky)}
+  .ilist{columns:2;column-gap:40px;max-width:900px;margin:0 auto}
+  .ilist .i{break-inside:avoid;display:flex;gap:11px;padding:8px 0;font-size:14.5px;color:#dbe4f0;border-bottom:1px solid rgba(255,255,255,.08)}.ilist .i b{color:var(--sky);font-weight:900}
+  .promise{background:var(--navy);color:#fff}
+  .promise .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+  .promise .eyebrow{color:var(--sky)}.promise h2{color:#fff;font-size:clamp(28px,3.6vw,40px);margin:8px 0 18px}
+  .promise p{color:#cfd9e6;font-size:17px;margin-bottom:16px}.promise p.big{font-size:19px;color:#fff}.promise .sign{color:var(--sky);font-weight:700;font-style:italic;margin:18px 0 26px}
+  .phone{background:#0a1830;border:10px solid #21426f;border-radius:30px;padding:14px;max-width:280px;margin:0 auto;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+  .phone .screen{background:linear-gradient(160deg,#1b3358,#0e2342);border-radius:20px;aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .phone .play{width:64px;height:64px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 8px 26px rgba(200,16,46,.5)}.phone .play:after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+  .phone .cap{font-size:13px;color:#aebccd;padding:0 24px;text-align:center}
+  .phone .tag{position:absolute;top:14px;left:14px;background:var(--red);font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:5px;text-transform:uppercase;color:#fff}
+  .locs{background:var(--soft)}
+  .locblock{padding:34px 0;border-bottom:1px solid var(--line)}.locblock:last-child{border-bottom:none}
+  .locblock .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .locblock.alt .photo{order:2}
+  .photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(14,35,66,.14);aspect-ratio:4/3;background:#13386e center/cover no-repeat}
+  .p-ard{background-image:url('shop-ardmore.jpg')}.p-wc{background-image:url('shop-westchester.jpg')}.p-hat{background-image:url('shop-hatboro.jpg')}
+  .info .tone{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-block;padding:5px 14px;border-radius:30px;margin-bottom:12px}
+  .tone.b{background:var(--blue)}.tone.r{background:var(--red)}.tone.b2{background:var(--blue2)}
+  .info h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:10px}.info p.copy{font-size:15px;color:var(--body);margin-bottom:16px}
+  .meta{font-size:14.5px;margin-bottom:6px}.meta .lab{color:var(--steel);font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .ph{font-size:20px;font-weight:800;color:var(--blue);margin:8px 0 16px}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+  .map{border:0;width:100%;height:210px;border-radius:12px}
+  .tg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .tcard{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:26px;border-top:4px solid var(--red)}
+  .tcard .stars{color:var(--red);font-size:17px;margin-bottom:12px;letter-spacing:2px}.tcard p{font-size:14.5px;color:var(--body);font-style:italic;margin-bottom:16px}
+  .tcard .who{font-weight:800;color:var(--ink);font-size:15px}.tcard .where{font-size:13px;color:var(--blue2);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  /* BOOKING FLOW */
+  .appt{background:var(--navy);color:#fff}
+  .bkstep{display:none}.bkstep.active{display:block}
+  .bkhead{text-align:center;color:#fff;margin-bottom:6px;font-size:clamp(22px,3vw,30px)}
+  .bksub{text-align:center;color:var(--sky);margin-bottom:26px}
+  .loccards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
+  .lc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;text-align:center;color:var(--body)}
+  .lc .pin{font-size:24px;margin-bottom:6px}.lc h4{color:var(--ink);font-size:18px;margin-bottom:4px}.lc .ad{font-size:13px;color:var(--steel);margin-bottom:8px}.lc .ph2{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:14px}
+  .lc .pick{display:block;width:100%;background:var(--blue);color:#fff;font-weight:800;padding:13px;border-radius:8px;border:2px solid var(--blue);cursor:pointer;font-size:15px}.lc .pick:hover{background:var(--blue2);border-color:var(--blue2)}
+  .bkbar{display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:18px}
+  .back{color:var(--sky);cursor:pointer;font-weight:700;font-size:14px}
+  .pill{display:inline-block;background:var(--red);color:#fff;font-weight:700;font-size:13px;padding:5px 14px;border-radius:30px}
+  .svtiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin:0 auto}
+  .sv{display:flex;gap:13px;align-items:flex-start;background:#fff;border:2px solid #fff;border-radius:10px;padding:16px 18px;cursor:pointer;transition:.15s;color:var(--body)}
+  .sv:hover{box-shadow:0 6px 18px rgba(0,0,0,.18)}.sv.sel{border-color:var(--red);background:#fff5f6}
+  .sv .bx{width:22px;height:22px;border:2px solid var(--line);border-radius:5px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:14px}
+  .sv.sel .bx{background:var(--red);border-color:var(--red)}
+  .sv .ic{font-size:22px;flex:none}.sv .t{font-weight:800;color:var(--ink);font-size:15px}.sv .d{font-size:12.5px;color:var(--steel)}
+  .bkfoot{max-width:900px;margin:22px auto 0;text-align:center}
+  .confirm{max-width:620px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;text-align:center;color:var(--body)}
+  .confirm .ck{width:64px;height:64px;border-radius:50%;background:#1a7f37;color:#fff;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+  .confirm h3{font-size:24px;margin-bottom:8px}.confirm p{color:var(--steel);font-size:15px;margin-bottom:8px}.confirm .summary{background:var(--soft);border-radius:10px;padding:16px;margin:16px 0;font-size:14px;text-align:left}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .pnl{border:1px solid var(--line);border-radius:14px;padding:34px;background:#fff}.pnl.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .pnl .eyebrow{color:var(--red)}.pnl.dark .eyebrow{color:var(--sky)}.pnl h3{font-size:23px;margin-bottom:10px}.pnl.dark h3{color:#fff}
+  .pnl p{font-size:15px;color:var(--steel);margin-bottom:18px}.pnl.dark p{color:#cfd9e6}
+  .pnl ul{list-style:none;margin-bottom:20px}.pnl ul li{font-size:14px;padding:5px 0 5px 24px;position:relative}.pnl.dark ul li{color:#cfd9e6}.pnl ul li:before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:900}.pnl.dark ul li:before{color:var(--sky)}
+  .book{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-align:center}.book .eyebrow{color:#ffd9df}.book h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:12px}.book p{color:#ffe3e7;font-size:18px;max-width:600px;margin:0 auto 26px}.book .nums{margin-top:20px;font-size:14px;color:#ffdfe4}.book .nums b{color:#fff}
+  footer{background:#0a1830;color:#9fb0c2;padding:56px 0 26px;font-size:14px}
+  .footlogo{display:block;height:60px;margin:0 auto 14px;background:#fff;padding:8px 14px;border-radius:8px}
+  .ftag{text-align:center;color:#8298b3;margin-bottom:36px}
+  .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:32px}
+  .fgrid h4{color:#fff;font-size:14px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}.fgrid a{display:block;color:#9fb0c2;padding:3px 0}.fgrid a:hover{color:#fff}.fcol b{color:#fff}
+  .copyright{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6b7c90}
+  /* MEET THE TEAM */
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+  .tc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 22px;text-align:center;box-shadow:0 10px 30px rgba(14,35,66,.05)}
+  .avatar{width:90px;height:90px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;border:3px solid var(--red)}
+  .tc h4{font-size:19px;color:var(--ink)}.tc .role{color:var(--red);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:2px 0 10px}.tc p{font-size:14px;color:var(--steel)}
+  /* OFFERS + FINANCING */
+  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .of{background:#fff;border:2px dashed var(--red);border-radius:12px;padding:24px;text-align:center}
+  .of .big{font-size:19px;font-weight:800;color:var(--red);margin-bottom:4px}.of p{font-size:13.5px;color:var(--steel)}
+  .fin{margin-top:26px;background:var(--navy);color:#fff;border-radius:14px;padding:30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+  .fin h3{color:#fff;font-size:22px;margin-bottom:4px}.fin p{color:#cfd9e6;font-size:14.5px;max-width:560px}
+  /* DIFFERENCE SPLIT */
+  .dsplit{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .dphoto{border-radius:14px;aspect-ratio:4/3;background:#13386e center/cover no-repeat;background-image:url('shopPics.jpg');box-shadow:0 14px 40px rgba(14,35,66,.14)}
+  .vlist{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+  .vitem{display:flex;gap:13px;align-items:flex-start}
+  .vitem .vc{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;font-size:14px}
+  .vitem b{display:block;color:var(--ink);font-size:16px}.vitem span{color:var(--steel);font-size:14px}
+  .am svg{width:36px;height:36px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px;display:block}
+  @media(max-width:860px){.menu{display:none}.burger{display:flex}.qc-grid,.values,.amen,.svc,.two,.tg,.split,.promise .grid,.locblock .row,.loccards,.svtiles,.team,.offers,.dsplit{grid-template-columns:1fr}.locblock.alt .photo{order:0}.ilist{columns:1}.fgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><img src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="fallback">HEILMAN AUTO SERVICE</span></a>
+    <nav class="menu">
+      <a href="#services">Services</a><a href="#locations">Locations</a><a href="#book">Appointments</a>
+      <a href="#cars">Certified Used Cars</a><a href="#careers">Employment</a>
+      <a href="#book" class="btn">Schedule Here!</a>
+    </nav>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="slides"><div class="slide s1 on"></div><div class="slide s2"></div><div class="slide s3"></div></div>
+  <div class="scrim"></div>
+  <div class="locbadge" id="locbadge">📍 Ardmore, PA</div>
+  <div class="dots"><b class="on" data-i="0"></b><b data-i="1"></b><b data-i="2"></b></div>
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--sky)">Ardmore · West Chester · Hatboro, PA</div>
+    <h1><span class="hl">1986 Hometown Honesty.</span></h1>
+    <p class="sub">My brother and I opened our doors back in 1986 with one simple rule: treat every car like it's our own, and always give folks the straight story. Almost forty years later, that hasn't changed one bit — we've just added the tools to prove it. You'll never get a runaround here. Just honest work from people who've been your neighbors for decades.</p>
+    <div class="sig">— Jack Heilman, Owner</div>
+    <div class="cta-row">
+      <a href="#book" class="btn big">Schedule Here →</a>
+    </div>
+    <div class="trustbar">
+      <span><b>Family-owned</b> since 1986</span><span class="dot">•</span>
+      <span><b>"A"-Level</b> master technicians</span><span class="dot">•</span>
+      <span><b>PA State Inspection</b> & Emissions</span><span class="dot">•</span>
+      <span><b>12 Mo / 12,000 Mi</b> warranty</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CALL -->
+<section class="quickcall" id="callstore">
+  <div class="wrap">
+    <div class="head"><h2>Need Us? Reach Your Shop Directly.</h2><p>Three neighborhood locations — one tap away.</p></div>
+    <div class="qc-grid">
+      <div class="qc"><div class="pin">📍</div><div class="town">Ardmore, PA</div><a class="callbtn" href="tel:6106491991">📞 Call Ardmore</a><a class="sched" href="#book">or schedule online →</a></div>
+      <div class="qc"><div class="pin">📍</div><div class="town">West Chester, PA</div><a class="callbtn" href="tel:6106922200">📞 Call West Chester</a><a class="sched" href="#book">or schedule online →</a></div>
+      <div class="qc"><div class="pin">📍</div><div class="town">Hatboro, PA</div><a class="callbtn" href="tel:2156745811">📞 Call Hatboro</a><a class="sched" href="#book">or schedule online →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST + REVIEW ROW -->
+<div class="trustrow">
+  <div class="wrap">
+    <div class="reviewbig"><span class="stars">★★★★★</span><span class="num">4.4-Star Average <span>· 200+ reviews across our three shops</span></span></div>
+    <div class="tbrow">
+      <div class="tb"><span class="ic">✔</span> Official PA Inspection &amp; Emissions Station</div>
+      <div class="tb"><span class="ic">★</span> Family-Owned Since 1986</div>
+      <div class="tb"><span class="ic">🛡</span> 12-Mo / 12,000-Mi Warranty</div>
+      <div class="tb"><span class="ic">🔧</span> "A"-Level Technicians</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE HEILMAN DIFFERENCE -->
+<section class="diff">
+  <div class="wrap">
+    <div class="dsplit">
+      <div class="dphoto"></div>
+      <div>
+        <div class="eyebrow">The Heilman Difference</div>
+        <h2 style="font-size:clamp(25px,3.2vw,34px);margin:8px 0 14px">Built on One Goal Since 1986</h2>
+        <p style="color:var(--body);font-size:16px;margin-bottom:4px">In 1986, Heilman Automotive was established by two brothers who had one goal in mind: to help people and their automotive needs. While we specialize in Automotive Repair, our main goal is to help our customers feel secure in their automotive situation. We believe there is no magic to providing great service, and pride ourselves on making sure we excel in these four areas:</p>
+        <h3 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 2px">Four Reasons People Love Heilman's</h3>
+        <div class="vlist">
+          <div class="vitem"><span class="vc">✓</span><div><b>Honesty &amp; Integrity</b><span>We tell you the truth, and show it to you on video.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Quality Care</b><span>Master-tech work, backed by our 12-month / 12,000-mile warranty.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Convenient Service</b><span>Online scheduling, fast turnaround, three local shops.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Friendly Team</b><span>People who've been here 10, 20, 30+ years and treat you right.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="locs">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">What We Specialize In</div><h2>Three Things We Do Best</h2><p>Quality work, total transparency — and we'll always tell you what your car needs before we start.</p></div>
+    <div class="svc">
+      <div class="scard s1"><div class="cap"></div><div class="bd"><h3>PA State Inspection</h3><div class="tagline">Safety & Emissions</div><ul><li>Full transparency on what passes and what fails</li><li>Wait while it's done — about 45 minutes</li><li>Every safety issue addressed so you drive away at ease</li><li>Written condition report when we're finished</li></ul><a href="#book" class="btn">Schedule Inspection</a></div></div>
+      <div class="scard s2"><div class="cap"></div><div class="bd"><h3>Heilman's Oil Change</h3><div class="tagline">Fastest in Town</div><ul><li>The fastest oil change in town, guaranteed</li><li>We check all factory-scheduled maintenance</li><li>Keeps your vehicle in excellent shape</li><li>Written condition report when we're finished</li></ul><a href="#book" class="btn">Schedule Oil Change</a></div></div>
+      <div class="scard s3"><div class="cap"></div><div class="bd"><h3>Expert Diagnostic & Repair</h3><div class="tagline">"A"-Level Technicians</div><ul><li>Whatever the trouble — we can fix it</li><li>Pinpoint diagnosis, priced for the expertise and shown on video</li><li>"A"-level techs at every location</li><li>Noises or vibrations? A tech rides along with you</li></ul><a href="#book" class="btn">Book a Diagnostic</a></div></div>
+    </div>
+    <div class="extra two">
+      <div class="panel"><h3>Road Service & Towing</h3><p>Car won't run? Call us and we'll get a tow truck on the way. Need a jump start? We can send a technician out.*</p><div class="chips"><span class="chip">Towing</span><span class="chip">Jump Starts</span></div><p class="note">*Within 5 miles of the shop, subject to staff availability.</p></div>
+      <div class="panel"><h3>Quick Service Checks</h3><p>Need one of these? Stop by any time we're open:</p><div class="chips"><span class="chip">Tire Repair</span><span class="chip">Fluid Check</span><span class="chip">Warning Light On</span><span class="chip">Noises / Vibrations</span><span class="chip">Exterior Bulb</span><span class="chip">Wiper Blades</span></div></div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:16px">*Additional charges may apply if deeper diagnostic work is needed — and we'll always tell you before we start.</p>
+  </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Meet the Heilmans</div><h2>The Family Behind the Shop</h2><p>Two brothers started this back in 1986. Almost forty years later, it's still personal.</p></div>
+    <div class="team">
+      <div class="tc"><div class="avatar">JH</div><h4>Jack Heilman</h4><div class="role">Owner &amp; Co-Founder</div><p>Came up on the business side. Built Heilman on one promise: shoot straight with every customer, every single time.</p></div>
+      <div class="tc"><div class="avatar">JH</div><h4>Jim Heilman</h4><div class="role">Co-Founder · In Loving Memory</div><p>The wrench of the family. Jim set the standard for the honest, top-quality work all three shops still live by today.</p></div>
+      <div class="tc"><div class="avatar">★</div><h4>Our Managers &amp; Techs</h4><div class="role">10, 20, 30+ Years</div><p>Many of our crew have been here for decades. Come back and you'll see the same faces who know you and your car.</p></div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:18px">Photos coming soon — drop in real team photos here.</p>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Why Folks Choose Us</div><h2>We Make This About as Painless as Car Repair Gets</h2><p>The little things that turn a bad day into an easy one.</p></div>
+    <div class="amen">
+      <div class="am"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="13" height="12" rx="2"/><path d="M15 10l6-3.5v11L15 14"/></svg><h4>Video Multi-Point Inspection</h4><p>Your inspection comes as a video sent to your phone — see the actual problem before you approve a dollar of work. You see exactly what the technician sees.</p></div>
+      <div class="am"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/><path d="M8.5 11h5M11 8.5v5"/></svg><h4>Pinpoint Diagnostics</h4><p>We don't throw parts at problems. Our master techs and factory-grade scan tools find the real cause and show it to you on video, so you only pay for the repair you actually need.</p></div>
+      <div class="am"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h4>Wait While We Work</h4><p>Fast service and a comfortable lobby. A lot of jobs, including state inspections, are done in about 45 minutes.</p></div>
+      <div class="am"><svg viewBox="0 0 24 24"><path d="M3 13l1.8-5A2 2 0 016.7 6.6h10.6a2 2 0 011.9 1.4L21 13"/><path d="M3 13h18v4H3z"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg><h4>Ride-Along Diagnosis</h4><p>Hear a noise, squeak, or vibration? A technician hops in and rides along with you to pinpoint it.</p></div>
+      <div class="am"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 3.5h6V5H9z"/><path d="M9 12l2 2 4-4"/></svg><h4>No Surprise Pricing</h4><p>You see the price and approve every job before we lift a wrench. No mystery charges, ever.</p></div>
+      <div class="am"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><h4>Text When It's Ready</h4><p>We text you updates and a heads-up the moment your car's done, so you're never left wondering.</p></div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:16px">*Road service and jump starts are available within 5 miles of the shop, subject to staff availability.</p>
+  </div>
+</section>
+
+<!-- VIDEO PROMISE -->
+<section class="promise">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Absolute Transparency</div>
+      <h2>You See What the Technician Sees.</h2>
+      <p class="big">We don't guess, and we don't expect you to just take our word for it. We send a high-definition video directly to your phone showing exactly what we see under the hood.</p>
+      <p>The worn brake pad, the leaking strut, the cracked boot — you see it before you approve a dollar of work. No upselling. No mystery charges. No "trust me."</p>
+      <p class="sign">It's the honesty Heilman was built on in 1986 — now delivered through the camera in your pocket.</p>
+      <a href="#book" class="btn">Get a Transparent Inspection</a>
+    </div>
+    <div><div class="phone"><div class="screen"><div class="tag">● Live from the bay</div><div class="play"></div><div class="cap">"Here's the leak on your front strut — you can see it right here."</div></div></div></div>
+  </div>
+</section>
+
+<!-- 21 POINT -->
+<section class="insp">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow" style="color:var(--sky)">Complimentary With Every Service</div><h2>Your 21-Point Video Inspection</h2><p>Every visit, your vehicle gets our full 21-point multi-point inspection — <b>recorded and sent right to your phone</b>, so you see each item we check with your own eyes. Here's exactly what our technicians look at:</p></div>
+    <div class="ilist">
+      <div class="i"><b>1</b> Verify factory scheduled maintenance is up to date</div>
+      <div class="i"><b>2</b> Test operation of all exterior lights</div>
+      <div class="i"><b>3</b> Inspect windshield washer operation & fluid level</div>
+      <div class="i"><b>4</b> Inspect operation of A/C & heating system</div>
+      <div class="i"><b>5</b> Check engine oil & filter / window sticker</div>
+      <div class="i"><b>6</b> Check transmission fluid level & condition</div>
+      <div class="i"><b>7</b> Check power steering fluid</div>
+      <div class="i"><b>8</b> Check engine coolant level & condition</div>
+      <div class="i"><b>9</b> Inspect belts for cracking, fraying, slippage & wear</div>
+      <div class="i"><b>10</b> Check air filter</div>
+      <div class="i"><b>11</b> Load test battery & inspect battery cables</div>
+      <div class="i"><b>12</b> Inspect condition of radiator & heating hoses</div>
+      <div class="i"><b>13</b> Visually inspect undercarriage for damage or leaks</div>
+      <div class="i"><b>14</b> Inspect tires (incl. spare) for inflation & wear</div>
+      <div class="i"><b>15</b> Inspect CV boots & axles</div>
+      <div class="i"><b>16</b> Inspect condition of exhaust system</div>
+      <div class="i"><b>17</b> Inspect engine & transmission mounts</div>
+      <div class="i"><b>18</b> Inspect front & rear brakes / test emergency brake</div>
+      <div class="i"><b>19</b> Inspect brake / clutch hydraulic system</div>
+      <div class="i"><b>20</b> Inspect ignition components & fuel filter</div>
+      <div class="i"><b>21</b> Visual check of shock absorbers or struts</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locs" id="locations">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Your Neighborhood Shop</div><h2>Three Towns. One Standard.</h2><p>Same family, same honesty since 1986 — tuned to how your town drives.</p></div>
+
+    <div class="locblock"><div class="row">
+      <div class="photo p-ard"></div>
+      <div class="info">
+        <span class="tone b">The Dealership Alternative</span>
+        <h3>Auto Repair in Ardmore, PA</h3>
+        <p class="copy">You invested in a finely engineered car — it deserves a finely engineered repair, without the dealership wait or the inflated invoice. We service European and luxury platforms with factory-level equipment, then show you the work on video before it's approved.</p>
+        <div class="meta"><span class="lab">Address</span><br><b>301 W Lancaster Ave, Ardmore, PA 19003</b></div>
+        <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+        <div class="ph">(610) 649-1991</div>
+        <div class="btns"><a href="tel:6106491991" class="btn blue">📞 Call</a><a href="#book" class="btn">Schedule →</a><a href="https://maps.google.com/maps?q=301+W+Lancaster+Ave,+Ardmore+PA+19003" target="_blank" class="btn">Directions</a></div>
+        <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=301%20W%20Lancaster%20Ave%2C%20Ardmore%20PA%2019003&t=m&z=15&output=embed"></iframe>
+      </div>
+    </div></div>
+
+    <div class="locblock alt"><div class="row">
+      <div class="photo p-wc"></div>
+      <div class="info">
+        <span class="tone r">Family Reliability</span>
+        <h3>Auto Repair in West Chester, PA</h3>
+        <p class="copy">Your family counts on that car every day — the commute, the school run, the long highway miles. We keep it dependable with honest repairs that catch small problems before they strand you on Route 202. Clear recommendations, shown to you on video.</p>
+        <div class="meta"><span class="lab">Address</span><br><b>1401 Wilmington Pike, West Chester, PA 19382</b></div>
+        <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+        <div class="ph">(610) 692-2200</div>
+        <div class="btns"><a href="tel:6106922200" class="btn blue">📞 Call</a><a href="#book" class="btn">Schedule →</a><a href="https://maps.google.com/maps?q=1401+Wilmington+Pike,+West+Chester+PA+19382" target="_blank" class="btn">Directions</a></div>
+        <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=1401%20Wilmington%20Pike%2C%20West%20Chester%20PA%2019382&t=m&z=15&output=embed"></iframe>
+      </div>
+    </div></div>
+
+    <div class="locblock"><div class="row">
+      <div class="photo p-hat"></div>
+      <div class="info">
+        <span class="tone b2">The Straight-Shooter</span>
+        <h3>Auto Repair in Hatboro, PA</h3>
+        <p class="copy">You work hard for your money and don't have time for games — neither do we. We tell you what's actually wrong, what can wait, and what it'll cost, straight, the first time, and back it up with video so you're never paying for "trust me."</p>
+        <div class="meta"><span class="lab">Address</span><br><b>201 S York Rd, Hatboro, PA 19040</b></div>
+        <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+        <div class="ph">(215) 674-5811</div>
+        <div class="btns"><a href="tel:2156745811" class="btn blue">📞 Call</a><a href="#book" class="btn">Schedule →</a><a href="https://maps.google.com/maps?q=201+S+York+Rd,+Hatboro+PA+19040" target="_blank" class="btn">Directions</a></div>
+        <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=201%20S%20York%20Rd%2C%20Hatboro%20PA%2019040&t=m&z=15&output=embed"></iframe>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Trusted Across Three Towns</div><h2>Don't Take Our Word For It</h2></div>
+    <div class="tg">
+      <div class="tcard"><div class="stars">★★★★★</div><p>"As a female it's intimidating going to an auto shop — I'm always making sure I'm not getting taken advantage of, and the guys here are great. They aren't pushy, they explain everything and make sure I'm only getting what my car really needs."</p><div class="who">Casey Lynch</div><div class="where">Ardmore</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"I called the day of and got an appointment to repair my headlight in less than 2 hours. The best, most efficient service I have ever received from an auto shop. Incredibly pleased with their prompt, professional service."</p><div class="who">Mae Towler</div><div class="where">West Chester</div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"Been taking my cars here for several years now. Honest work. Three people in life you need: a good mechanic, a good plumber, and a good doctor. These guys are my good mechanic!"</p><div class="who">Michael Palumbo</div><div class="where">Hatboro</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS + FINANCING -->
+<section class="why" id="offers">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Offers &amp; Financing</div><h2>A Little Something to Get You In the Door</h2></div>
+    <div class="offers">
+      <div class="of"><div class="big">New Neighbor?</div><p>$25 off your first visit with us. Welcome to the family.</p></div>
+      <div class="of"><div class="big">Seasonal Check-Up</div><p>Heading into summer or winter? Ask about our seasonal safety check.</p></div>
+      <div class="of"><div class="big">Multi-Car Families</div><p>More than one car in the driveway? Ask us about looking after all of them.</p></div>
+    </div>
+    <div class="fin">
+      <div><h3>Big repair? Spread it out.</h3><p>A safe car shouldn't have to wait for payday. Ask about our financing options — say yes to the work your car actually needs and pay over time.</p></div>
+      <a href="#book" class="btn">Ask About Financing</a>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENTS — 2-STEP BOOKING -->
+<section class="appt" id="book">
+  <div class="wrap narrow">
+    <div class="sec-head"><div class="eyebrow" style="color:var(--sky)">Real-Time Online Booking</div><h2 style="color:#fff">Click. Book. Fixed.</h2><p style="color:var(--sky)">No phone tag. Pick your shop, pick your service — you're booked.</p></div>
+
+    <!-- STEP 1 -->
+    <div class="bkstep active" id="bk1">
+      <div class="bkhead">Choose a Location</div>
+      <div class="bksub">Select a shop to get started.</div>
+      <div class="loccards">
+        <div class="lc"><div class="pin">📍</div><h4>Ardmore</h4><div class="ad">301 W Lancaster Ave</div><div class="ph2">(610) 649-1991</div><button class="pick" onclick="bkLoc('Ardmore')">Book Appointment</button></div>
+        <div class="lc"><div class="pin">📍</div><h4>West Chester</h4><div class="ad">1401 Wilmington Pike</div><div class="ph2">(610) 692-2200</div><button class="pick" onclick="bkLoc('West Chester')">Book Appointment</button></div>
+        <div class="lc"><div class="pin">📍</div><h4>Hatboro</h4><div class="ad">201 S York Rd</div><div class="ph2">(215) 674-5811</div><button class="pick" onclick="bkLoc('Hatboro')">Book Appointment</button></div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="bkstep" id="bk2">
+      <div class="bkbar"><span class="back" onclick="bkStep(1)">← Change location</span><span class="pill" id="bkLocPill">Ardmore</span></div>
+      <div class="bkhead">Select One or More Services</div>
+      <div class="bksub">Tap everything you need — then continue.</div>
+      <div class="svtiles">
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛢️</span><div><div class="t">Oil Change</div><div class="d">Keep your engine smooth with our fast oil change.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">✅</span><div><div class="t">PA State Inspection</div><div class="d">Safety & emissions — done right, done fast.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🗓️</span><div><div class="t">Scheduled Maintenance</div><div class="d">Factory-scheduled service to keep you in top shape.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛞</span><div><div class="t">Tires & Wheels</div><div class="d">Tire repair and replacement for safety and wear.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛑</span><div><div class="t">Brakes</div><div class="d">Brake inspection and repair you can rely on.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">❄️</span><div><div class="t">A/C & Heating</div><div class="d">Stay comfortable in every season.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">⚠️</span><div><div class="t">Warning Light On</div><div class="d">We'll diagnose that dashboard light.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🔋</span><div><div class="t">Not Starting</div><div class="d">Quick diagnosis for no-start and battery issues.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🔊</span><div><div class="t">Noise / Vibration</div><div class="d">Hear something? We'll find it — ride-along included.</div></div></div>
+        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">💬</span><div><div class="t">Something Else</div><div class="d">Describe your issue and we'll take a look.</div></div></div>
+      </div>
+      <div class="bkfoot"><button class="btn big white" onclick="bkGo()">Continue to Confirm →</button></div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="bkstep" id="bk3">
+      <div class="confirm">
+        <div class="ck">✓</div>
+        <h3>You're Almost Booked!</h3>
+        <p>Here's what you picked. We'll text you to lock in the exact time — usually within the hour during business hours.</p>
+        <div class="summary" id="bkSummary"></div>
+        <p style="font-size:13px">And remember: before any work begins, you'll get a video showing exactly what we see. No surprises.</p>
+        <button class="btn" onclick="bkStep(1)">Start Over</button>
+      </div>
+    </div>
+
+    <div class="bkfoot" style="margin-top:24px"><span style="color:var(--sky);font-size:14px">Prefer to talk? Call Ardmore (610) 649-1991 · West Chester (610) 692-2200 · Hatboro (215) 674-5811 · Mon–Fri 7–6</span></div>
+  </div>
+</section>
+
+<!-- CARS + CAREERS -->
+<section class="locs">
+  <div class="wrap split">
+    <div class="pnl" id="cars">
+      <div class="eyebrow">Certified Used Cars</div>
+      <h3>Buy From a Shop That Knows the Car</h3>
+      <p>Every certified used vehicle on our lot has been through the same bay and the same master techs that service your car. We don't sell what we wouldn't drive — and we'll show you its condition report, same as always.</p>
+      <a href="#" class="btn blue">Browse Current Inventory</a>
+    </div>
+    <div class="pnl dark" id="careers">
+      <div class="eyebrow">Now Hiring</div>
+      <h3>Join the Heilman Team</h3>
+      <p>35+ years building careers, not just filling shifts. Top compensation in the area, plus the benefits you actually want:</p>
+      <ul><li>Paid vacation, sick days &amp; holidays</li><li>401(k) and health insurance</li><li>Ongoing training &amp; career development</li><li>A clean, modern shop that's always busy</li></ul>
+      <a href="#" class="btn">Apply Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <img class="footlogo" src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';">
+    <div class="ftag">Keeping Pennsylvania neighborhoods safe and on the road since 1986.</div>
+    <div class="fgrid">
+      <div class="fcol"><h4>Ardmore</h4><b>301 W Lancaster Ave</b><br>Ardmore, PA 19003<br><a href="tel:6106491991">(610) 649-1991</a></div>
+      <div class="fcol"><h4>West Chester</h4><b>1401 Wilmington Pike</b><br>West Chester, PA 19382<br><a href="tel:6106922200">(610) 692-2200</a></div>
+      <div class="fcol"><h4>Hatboro</h4><b>201 S York Rd</b><br>Hatboro, PA 19040<br><a href="tel:2156745811">(215) 674-5811</a></div>
+      <div class="fcol"><h4>Explore</h4><a href="#services">Services</a><a href="#locations">Locations</a><a href="#book">Appointments</a><a href="#cars">Certified Used Cars</a><a href="#careers">Employment</a></div>
+    </div>
+    <div class="copyright">© 1986–2026 Heilman Auto Service. Ardmore · West Chester · Hatboro, PA. &nbsp;|&nbsp; Mockup — proposed redesign, original logo &amp; colors retained.</div>
+  </div>
+</footer>
+
+<script>
+  // Rotating hero
+  (function(){
+    var slides=document.querySelectorAll('.hero .slide'),dots=document.querySelectorAll('.hero .dots b');
+    var names=['📍 Ardmore, PA','📍 West Chester, PA','📍 Hatboro, PA'],badge=document.getElementById('locbadge'),i=0,timer;
+    function show(n){slides.forEach(function(s,k){s.classList.toggle('on',k===n);});dots.forEach(function(d,k){d.classList.toggle('on',k===n);});if(badge)badge.textContent=names[n];i=n;}
+    function next(){show((i+1)%slides.length);}function start(){timer=setInterval(next,5000);}
+    dots.forEach(function(d){d.addEventListener('click',function(){clearInterval(timer);show(+d.dataset.i);start();});});
+    start();
+  })();
+  // Mobile menu
+  document.querySelector('.burger').addEventListener('click',function(){var m=document.querySelector('.menu');m.style.display=(m.style.display==='flex')?'none':'flex';m.style.position='absolute';m.style.top='84px';m.style.right='20px';m.style.flexDirection='column';m.style.background='#fff';m.style.padding='18px 22px';m.style.borderRadius='10px';m.style.gap='14px';m.style.boxShadow='0 10px 30px rgba(0,0,0,.15)';});
+  // Booking flow
+  var bkLocation='';
+  function bkStep(n){document.querySelectorAll('.bkstep').forEach(function(s){s.classList.remove('active');});document.getElementById('bk'+n).classList.add('active');document.getElementById('book').scrollIntoView({behavior:'smooth'});}
+  function bkLoc(name){bkLocation=name;document.getElementById('bkLocPill').textContent=name;bkStep(2);}
+  function bkSel(el){el.classList.toggle('sel');el.querySelector('.bx').textContent=el.classList.contains('sel')?'✓':'';}
+  function bkGo(){
+    var picks=[];document.querySelectorAll('#bk2 .sv.sel .t').forEach(function(t){picks.push(t.textContent);});
+    if(picks.length===0){alert('Please tap at least one service.');return;}
+    document.getElementById('bkSummary').innerHTML='<b>Location:</b> '+bkLocation+'<br><b>Services:</b> '+picks.join(', ');
+    bkStep(3);
+  }
+</script>
+</body>
+</html>

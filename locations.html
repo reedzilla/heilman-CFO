@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations — Heilman Auto Service</title>
+<style>
+  :root{
+    --navy:#0e2342;--navy2:#163a66;--ink:#0e2342;--body:#33414f;--steel:#64748b;
+    --line:#e3e8ee;--soft:#f4f7fb;--white:#fff;--red:#c8102e;--red2:#a30d25;
+    --blue:#13386e;--blue2:#1c4f9c;--sky:#9cc0ec;
+    --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--body);line-height:1.6;background:var(--white);font-size:16px}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 22px;border-radius:8px;font-size:15px;transition:.15s;border:2px solid var(--red)}
+  .btn:hover{background:var(--red2);border-color:var(--red2)}
+  .btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}.btn.blue:hover{background:var(--blue2);border-color:var(--blue2)}
+  .btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue)}.btn.ghost:hover{background:var(--blue);color:#fff}
+  .btn.white{background:#fff;color:var(--blue);border-color:#fff}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 2px 12px rgba(14,35,66,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .logo img{height:62px;width:auto;display:block}
+  .menu{display:flex;align-items:center;gap:24px}
+  .menu a{color:#1f2d3d;font-size:14.5px;font-weight:700}.menu a:hover,.menu a.on{color:var(--red)}
+  .menu .btn{color:#fff;padding:11px 20px}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}.burger span{width:26px;height:3px;background:var(--blue);border-radius:2px}
+  .banner{background:linear-gradient(135deg,#0b1f3c,#13386e 60%,#1c4f9c);color:#fff;text-align:center;padding:60px 24px}
+  .banner h1{color:#fff;font-size:clamp(30px,4.4vw,46px);margin:8px 0 10px}
+  .banner p{color:#dce7f5;font-size:18px;max-width:640px;margin:0 auto}
+  /* quick call bar */
+  .qbar{background:var(--navy);padding:24px 0}
+  .qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .qbtn{display:block;text-align:center;background:var(--blue2);color:#fff;font-weight:800;font-size:16px;padding:14px;border-radius:9px;border:2px solid var(--blue2)}
+  .qbtn:hover{background:#2563bd}
+  /* location blocks */
+  .loc{padding:56px 0;border-bottom:1px solid var(--line)}
+  .loc .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .loc.alt .photo{order:2}
+  .photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(14,35,66,.14);aspect-ratio:4/3;background:#13386e center/cover no-repeat}
+  .p-ard{background-image:url('shop-ardmore.jpg')}.p-wc{background-image:url('shop-westchester.jpg')}.p-hat{background-image:url('shop-hatboro.jpg')}
+  .info .tone{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-block;padding:5px 14px;border-radius:30px;margin-bottom:12px}
+  .tone.b{background:var(--blue)}.tone.r{background:var(--red)}.tone.b2{background:var(--blue2)}
+  .info h2{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  .info p.copy{font-size:15.5px;color:var(--body);margin-bottom:18px}
+  .meta{font-size:15px;color:var(--ink);margin-bottom:6px}.meta b{color:var(--ink)}
+  .meta .lab{color:var(--steel);font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .ph{font-size:22px;font-weight:800;color:var(--blue);margin:8px 0 18px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .map{border:0;width:100%;height:230px;border-radius:12px;margin-top:6px}
+  /* book */
+  .book{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-align:center;padding:66px 0}
+  .book h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:12px}.book p{color:#ffe3e7;font-size:18px;max-width:600px;margin:0 auto 26px}
+  footer{background:#0a1830;color:#9fb0c2;padding:54px 0 26px;font-size:14px}
+  .footlogo{display:block;height:60px;margin:0 auto 14px;background:#fff;padding:8px 14px;border-radius:8px}
+  .ftag{text-align:center;color:#8298b3;margin-bottom:36px}
+  .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:32px}
+  .fgrid h4{color:#fff;font-size:14px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+  .fgrid a{display:block;color:#9fb0c2;padding:3px 0}.fgrid a:hover{color:#fff}.fcol b{color:#fff}
+  .copyright{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6b7c90}
+  @media(max-width:860px){.menu{display:none}.burger{display:flex}.qgrid{grid-template-columns:1fr}.loc .row{grid-template-columns:1fr;gap:24px}.loc.alt .photo{order:0}.fgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="heilman_full_site.html" class="logo"><img src="logo.webp" alt="Heilman Auto Service"></a>
+    <nav class="menu">
+      <a href="services.html">Services</a>
+      <a href="locations.html" class="on">Locations</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="heilman_full_site.html#cars">Certified Used Cars</a>
+      <a href="heilman_full_site.html#careers">Employment</a>
+      <a href="appointments.html" class="btn">Schedule Here!</a>
+    </nav>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="eyebrow" style="color:var(--sky)">Three Towns. One Standard.</div>
+  <h1>Find Your Neighborhood Shop</h1>
+  <p>Same family, same honesty since 1986 — three convenient Pennsylvania locations, each tuned to how its town drives.</p>
+</div>
+
+<div class="qbar">
+  <div class="wrap qgrid">
+    <a class="qbtn" href="tel:6106491991">📞 Call Ardmore</a>
+    <a class="qbtn" href="tel:6106922200">📞 Call West Chester</a>
+    <a class="qbtn" href="tel:2156745811">📞 Call Hatboro</a>
+  </div>
+</div>
+
+<!-- ARDMORE -->
+<section class="loc" id="ardmore">
+  <div class="wrap row">
+    <div class="photo p-ard"></div>
+    <div class="info">
+      <span class="tone b">The Dealership Alternative</span>
+      <h2>Ardmore, PA</h2>
+      <p class="copy">You invested in a finely engineered car — it deserves a finely engineered repair, without the dealership wait or the inflated invoice. We service European and luxury platforms with factory-level equipment, then show you the work on video before it's approved.</p>
+      <div class="meta"><span class="lab">Address</span><br><b>301 W Lancaster Ave, Ardmore, PA 19003</b></div>
+      <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+      <div class="ph">(610) 649-1991</div>
+      <div class="btns">
+        <a href="tel:6106491991" class="btn blue">📞 Call Ardmore</a>
+        <a href="appointments.html" class="btn">Schedule →</a>
+        <a href="https://maps.google.com/maps?q=301+W+Lancaster+Ave,+Ardmore+PA+19003" target="_blank" class="btn ghost">Get Directions</a>
+      </div>
+      <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=301%20W%20Lancaster%20Ave%2C%20Ardmore%20PA%2019003&t=m&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- WEST CHESTER -->
+<section class="loc alt" id="westchester">
+  <div class="wrap row">
+    <div class="photo p-wc"></div>
+    <div class="info">
+      <span class="tone r">Family Reliability</span>
+      <h2>West Chester, PA</h2>
+      <p class="copy">Your family counts on that car every day — the commute, the school run, the long highway miles. We keep it dependable with honest repairs that catch small problems before they strand you on Route 202. Clear recommendations, shown to you on video.</p>
+      <div class="meta"><span class="lab">Address</span><br><b>1401 Wilmington Pike, West Chester, PA 19382</b></div>
+      <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+      <div class="ph">(610) 692-2200</div>
+      <div class="btns">
+        <a href="tel:6106922200" class="btn blue">📞 Call West Chester</a>
+        <a href="appointments.html" class="btn">Schedule →</a>
+        <a href="https://maps.google.com/maps?q=1401+Wilmington+Pike,+West+Chester+PA+19382" target="_blank" class="btn ghost">Get Directions</a>
+      </div>
+      <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=1401%20Wilmington%20Pike%2C%20West%20Chester%20PA%2019382&t=m&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- HATBORO -->
+<section class="loc" id="hatboro">
+  <div class="wrap row">
+    <div class="photo p-hat"></div>
+    <div class="info">
+      <span class="tone b2">The Straight-Shooter</span>
+      <h2>Hatboro, PA</h2>
+      <p class="copy">You work hard for your money and don't have time for games — neither do we. We tell you what's actually wrong, what can wait, and what it'll cost, straight, the first time, and back it up with video so you're never paying for "trust me."</p>
+      <div class="meta"><span class="lab">Address</span><br><b>201 S York Rd, Hatboro, PA 19040</b></div>
+      <div class="meta"><span class="lab">Hours</span><br>Mon–Fri 7:00 AM – 6:00 PM · Sat–Sun Closed</div>
+      <div class="ph">(215) 674-5811</div>
+      <div class="btns">
+        <a href="tel:2156745811" class="btn blue">📞 Call Hatboro</a>
+        <a href="appointments.html" class="btn">Schedule →</a>
+        <a href="https://maps.google.com/maps?q=201+S+York+Rd,+Hatboro+PA+19040" target="_blank" class="btn ghost">Get Directions</a>
+      </div>
+      <iframe class="map" loading="lazy" src="https://maps.google.com/maps?q=201%20S%20York%20Rd%2C%20Hatboro%20PA%2019040&t=m&z=15&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="book">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#ffd9df">Wherever You Are</div>
+    <h2>Book Your Shop Online</h2>
+    <p>Skip the phone tag — pick your location and time and we'll confirm fast.</p>
+    <a href="appointments.html" class="btn white">Schedule Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="footlogo" src="logo.webp" alt="Heilman Auto Service">
+    <div class="ftag">Keeping Pennsylvania neighborhoods safe and on the road since 1986.</div>
+    <div class="fgrid">
+      <div class="fcol"><h4>Ardmore</h4><b>301 W Lancaster Ave</b><br>Ardmore, PA 19003<br><a href="tel:6106491991">(610) 649-1991</a></div>
+      <div class="fcol"><h4>West Chester</h4><b>1401 Wilmington Pike</b><br>West Chester, PA 19382<br><a href="tel:6106922200">(610) 692-2200</a></div>
+      <div class="fcol"><h4>Hatboro</h4><b>201 S York Rd</b><br>Hatboro, PA 19040<br><a href="tel:2156745811">(215) 674-5811</a></div>
+      <div class="fcol"><h4>Hours & Links</h4>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat–Sun: Closed<br><br>
+        <a href="services.html">Services</a><a href="locations.html">Locations</a><a href="appointments.html">Appointments</a></div>
+    </div>
+    <div class="copyright">© 1986–2026 Heilman Auto Service. Ardmore · West Chester · Hatboro, PA. &nbsp;|&nbsp; Mockup — proposed redesign.</div>
+  </div>
+</footer>
+<script>
+document.querySelector('.burger').addEventListener('click',function(){var m=document.querySelector('.menu');m.style.display=(m.style.display==='flex')?'none':'flex';m.style.position='absolute';m.style.top='84px';m.style.right='20px';m.style.flexDirection='column';m.style.background='#fff';m.style.padding='18px 22px';m.style.borderRadius='10px';m.style.gap='14px';m.style.boxShadow='0 10px 30px rgba(0,0,0,.15)';});
+</script>
+</body>
+</html>

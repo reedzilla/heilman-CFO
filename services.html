@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Heilman Auto Service</title>
+<style>
+  :root{
+    --navy:#0e2342;--navy2:#163a66;--ink:#0e2342;--body:#33414f;--steel:#64748b;
+    --line:#e3e8ee;--soft:#f4f7fb;--white:#fff;--red:#c8102e;--red2:#a30d25;
+    --blue:#13386e;--blue2:#1c4f9c;--sky:#9cc0ec;
+    --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--body);line-height:1.6;background:var(--white);font-size:16px}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.01em}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 22px;border-radius:8px;font-size:15px;transition:.15s;border:2px solid var(--red)}
+  .btn:hover{background:var(--red2);border-color:var(--red2)}
+  .btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}
+  .btn.blue:hover{background:var(--blue2);border-color:var(--blue2)}
+  .btn.white{background:#fff;color:var(--blue);border-color:#fff}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}
+  /* HEADER */
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 2px 12px rgba(14,35,66,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
+  .logo img{height:62px;width:auto;display:block}
+  .menu{display:flex;align-items:center;gap:24px}
+  .menu a{color:#1f2d3d;font-size:14.5px;font-weight:700}
+  .menu a:hover,.menu a.on{color:var(--red)}
+  .menu .btn{color:#fff;padding:11px 20px}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .burger span{width:26px;height:3px;background:var(--blue);border-radius:2px}
+  /* PAGE BANNER */
+  .banner{background:linear-gradient(135deg,#0b1f3c,#13386e 60%,#1c4f9c);color:#fff;text-align:center;padding:64px 24px}
+  .banner h1{color:#fff;font-size:clamp(30px,4.4vw,46px);margin:8px 0 10px}
+  .banner p{color:#dce7f5;font-size:18px;max-width:680px;margin:0 auto}
+  section{padding:66px 0}
+  .sec-head{text-align:center;max-width:740px;margin:0 auto 44px}
+  .sec-head h2{font-size:clamp(25px,3.2vw,34px);margin:10px 0 12px}
+  .sec-head p{font-size:17px;color:var(--steel)}
+  /* MAIN SERVICES */
+  .svc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+  .scard{border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(14,35,66,.05)}
+  .scard .cap{height:7px}.scard.s1 .cap{background:var(--blue)}.scard.s2 .cap{background:var(--red)}.scard.s3 .cap{background:var(--blue2)}
+  .scard .bd{padding:26px 24px;display:flex;flex-direction:column;flex:1}
+  .scard h3{font-size:21px;margin-bottom:6px}
+  .scard .tagline{font-size:13px;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+  .scard ul{list-style:none;margin-bottom:20px;flex:1}
+  .scard li{font-size:14.5px;padding:7px 0 7px 26px;position:relative;color:var(--body)}
+  .scard li:before{content:"✓";position:absolute;left:0;color:var(--blue2);font-weight:900}
+  .scard .btn{text-align:center}
+  /* VIDEO promise band */
+  .promise{background:var(--navy);color:#fff}
+  .promise .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
+  .promise .eyebrow{color:var(--sky)}.promise h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin:8px 0 16px}
+  .promise p{color:#cfd9e6;font-size:17px;margin-bottom:14px}.promise p.big{color:#fff;font-size:19px}
+  .phone{background:#0a1830;border:10px solid #21426f;border-radius:30px;padding:14px;max-width:250px;margin:0 auto}
+  .phone .screen{background:linear-gradient(160deg,#1b3358,#0e2342);border-radius:20px;aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+  .phone .play{width:60px;height:60px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .phone .play:after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+  .phone .cap{font-size:12.5px;color:#aebccd;padding:0 22px;text-align:center}
+  .phone .tag{position:absolute;top:13px;left:13px;background:var(--red);font-size:9.5px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:5px;text-transform:uppercase;color:#fff}
+  /* QUICK + EXTRA */
+  .extra{background:var(--soft)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px}
+  .panel h3{font-size:20px;margin-bottom:8px}.panel p{color:var(--steel);font-size:14.5px;margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{background:var(--soft);border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--blue)}
+  .note{font-size:12.5px;color:var(--steel);margin-top:12px;font-style:italic}
+  /* DIFFERENCE */
+  .diff3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;text-align:center}
+  .d{padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--soft);border-top:4px solid var(--red)}
+  .d .vico{width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px;font-weight:900}
+  .d h3{color:var(--blue);font-size:18px}.d p{font-size:14px;color:var(--steel);margin-top:6px}
+  /* 21 POINT */
+  .insp{background:var(--navy);color:#fff}
+  .insp .sec-head h2{color:#fff}.insp .sec-head p{color:var(--sky)}
+  .ilist{columns:2;column-gap:40px;max-width:900px;margin:0 auto}
+  .ilist .i{break-inside:avoid;display:flex;gap:11px;padding:8px 0;font-size:14.5px;color:#dbe4f0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .ilist .i b{color:var(--sky);font-weight:900}
+  /* BOOK */
+  .book{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-align:center}
+  .book h2{color:#fff;font-size:clamp(26px,3.4vw,38px);margin-bottom:12px}.book p{color:#ffe3e7;font-size:18px;max-width:600px;margin:0 auto 26px}
+  /* FOOTER */
+  footer{background:#0a1830;color:#9fb0c2;padding:54px 0 26px;font-size:14px}
+  .footlogo{display:block;height:60px;margin:0 auto 14px;background:#fff;padding:8px 14px;border-radius:8px}
+  .ftag{text-align:center;color:#8298b3;margin-bottom:36px}
+  .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:32px}
+  .fgrid h4{color:#fff;font-size:14px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}
+  .fgrid a{display:block;color:#9fb0c2;padding:3px 0}.fgrid a:hover{color:#fff}.fcol b{color:#fff}
+  .copyright{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6b7c90}
+  @media(max-width:860px){.menu{display:none}.burger{display:flex}.svc,.two,.diff3,.promise .grid{grid-template-columns:1fr}.ilist{columns:1}.fgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="heilman_full_site.html" class="logo"><img src="logo.webp" alt="Heilman Auto Service"></a>
+    <nav class="menu">
+      <a href="services.html" class="on">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="heilman_full_site.html#cars">Certified Used Cars</a>
+      <a href="heilman_full_site.html#careers">Employment</a>
+      <a href="appointments.html" class="btn">Schedule Here!</a>
+    </nav>
+    <div class="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="banner">
+  <div class="eyebrow" style="color:var(--sky)">More Life With Every Service</div>
+  <h1>Quality Work. Total Transparency.</h1>
+  <p>We know how much trust you put in the people who service your vehicle. We pride ourselves on quality work and being clear about exactly what your car needs — and showing you why.</p>
+</div>
+
+<!-- MAIN SERVICES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What We Specialize In</div>
+      <h2>Three Things We Do Best</h2>
+    </div>
+    <div class="svc">
+      <div class="scard s1"><div class="cap"></div><div class="bd">
+        <h3>PA State Inspection</h3>
+        <div class="tagline">Safety & Emissions</div>
+        <ul>
+          <li>Full transparency on what passes and what fails</li>
+          <li>Wait while it's done — about 45 minutes</li>
+          <li>Every safety issue addressed so you drive away at ease</li>
+          <li>Written condition report when we're finished</li>
+        </ul>
+        <a href="appointments.html" class="btn">Schedule Inspection</a>
+      </div></div>
+      <div class="scard s2"><div class="cap"></div><div class="bd">
+        <h3>Heilman's Oil Change</h3>
+        <div class="tagline">Fastest in Town</div>
+        <ul>
+          <li>Guaranteed fast service — the fastest oil change in town</li>
+          <li>We check all factory-scheduled maintenance</li>
+          <li>Keeps your vehicle in excellent shape</li>
+          <li>Written condition report when we're finished</li>
+        </ul>
+        <a href="appointments.html" class="btn">Schedule Oil Change</a>
+      </div></div>
+      <div class="scard s3"><div class="cap"></div><div class="bd">
+        <h3>Expert Diagnostic & Repair</h3>
+        <div class="tagline">"A"-Level Technicians</div>
+        <ul>
+          <li>Whatever the trouble — we can fix it</li>
+          <li>Pinpoint diagnosis, priced for the expertise and shown on video</li>
+          <li>"A"-level techs at every location</li>
+          <li>Noises or vibrations? A tech will ride along with you</li>
+        </ul>
+        <a href="appointments.html" class="btn">Book a Diagnostic</a>
+      </div></div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:18px">*Additional charges may apply if deeper diagnostic work is needed to pinpoint the cause — and we'll always tell you before we start.</p>
+  </div>
+</section>
+
+<!-- VIDEO PROMISE -->
+<section class="promise">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Absolute Transparency</div>
+      <h2>You See What the Technician Sees</h2>
+      <p class="big">We don't guess, and we don't expect you to just take our word for it. We send a high-definition video straight to your phone showing exactly what we see under the hood.</p>
+      <p>The worn brake pad, the leaking strut, the cracked boot — you see it before you approve a dollar of work. No upselling, no mystery charges, no "trust me."</p>
+      <a href="appointments.html" class="btn" style="margin-top:8px">Get a Transparent Inspection</a>
+    </div>
+    <div><div class="phone"><div class="screen">
+      <div class="tag">● Live from the bay</div>
+      <div class="play"></div>
+      <div class="cap">"Here's the leak on your front strut — see it right here."</div>
+    </div></div></div>
+  </div>
+</section>
+
+<!-- ROAD SERVICE + QUICK CHECKS -->
+<section class="extra">
+  <div class="wrap two">
+    <div class="panel">
+      <h3>Road Service & Towing</h3>
+      <p>Car won't run? Give us a call and we'll get a tow truck on the way. Need a jump start? We can send a technician out to get you going.*</p>
+      <a href="#" class="btn blue">Call for Road Service</a>
+      <p class="note">*Rides and road service must be within 5 miles of the shop, subject to staff availability that day.</p>
+    </div>
+    <div class="panel">
+      <h3>Quick Service Checks</h3>
+      <p>Need one of these? Stop by any time we're open — we're happy to help:</p>
+      <div class="chips">
+        <span class="chip">Tire Repair</span>
+        <span class="chip">Fluid Check</span>
+        <span class="chip">Warning Light On</span>
+        <span class="chip">Noises / Vibrations</span>
+        <span class="chip">Exterior Bulb</span>
+        <span class="chip">Wiper Blades</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE HEILMAN DIFFERENCE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">The Heilman Difference</div><h2>Why People Trust Us With Their Cars</h2></div>
+    <div class="diff3">
+      <div class="d"><div class="vico">☎</div><h3>Expert Managers</h3><p>Call with any question about your vehicle — our experienced managers give you straight, honest advice.</p></div>
+      <div class="d"><div class="vico">★</div><h3>Expert Technicians</h3><p>Every shop is staffed with "A"-level technicians who can fix any issue.</p></div>
+      <div class="d"><div class="vico">✓</div><h3>Trusted Work</h3><p>We stand behind it — a 12-Month / 12,000-Mile warranty on all repairs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 POINT INSPECTION -->
+<section class="insp">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" style="color:var(--sky)">Complimentary With Every Service</div>
+      <h2>Heilman's 21-Point Inspection</h2>
+      <p>Every visit, your vehicle gets our full 21-point inspection — and we review the results <b>with you</b> when the work is done. Here's exactly what our technicians check:</p>
+    </div>
+    <div class="ilist">
+      <div class="i"><b>1</b> Verify factory scheduled maintenance is up to date</div>
+      <div class="i"><b>2</b> Test operation of all exterior lights</div>
+      <div class="i"><b>3</b> Inspect windshield washer operation and fluid level</div>
+      <div class="i"><b>4</b> Inspect operation of A/C & heating system</div>
+      <div class="i"><b>5</b> Check engine oil & filter / window sticker</div>
+      <div class="i"><b>6</b> Check transmission fluid level & condition</div>
+      <div class="i"><b>7</b> Check power steering fluid</div>
+      <div class="i"><b>8</b> Check engine coolant level & condition</div>
+      <div class="i"><b>9</b> Inspect belts for cracking, fraying, slippage & wear</div>
+      <div class="i"><b>10</b> Check air filter</div>
+      <div class="i"><b>11</b> Load test battery & inspect battery cables</div>
+      <div class="i"><b>12</b> Inspect condition of radiator & heating hoses</div>
+      <div class="i"><b>13</b> Visually inspect undercarriage for damage or leaks</div>
+      <div class="i"><b>14</b> Inspect tires (incl. spare) for inflation & wear</div>
+      <div class="i"><b>15</b> Inspect CV boots & axles</div>
+      <div class="i"><b>16</b> Inspect condition of exhaust system</div>
+      <div class="i"><b>17</b> Inspect engine & transmission mounts</div>
+      <div class="i"><b>18</b> Inspect front & rear brakes / test emergency brake</div>
+      <div class="i"><b>19</b> Inspect brake / clutch hydraulic system</div>
+      <div class="i"><b>20</b> Inspect ignition components & fuel filter</div>
+      <div class="i"><b>21</b> Visual check of shock absorbers or struts</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#ffd9df">Ready When You Are</div>
+    <h2>Book Your Service Online</h2>
+    <p>Pick your shop, pick your time, tell us what's going on. We'll confirm fast.</p>
+    <a href="appointments.html" class="btn white">Schedule Now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="footlogo" src="logo.webp" alt="Heilman Auto Service">
+    <div class="ftag">Keeping Pennsylvania neighborhoods safe and on the road since 1986.</div>
+    <div class="fgrid">
+      <div class="fcol"><h4>Ardmore</h4><b>301 W Lancaster Ave</b><br>Ardmore, PA 19003<br><a href="tel:6106491991">(610) 649-1991</a></div>
+      <div class="fcol"><h4>West Chester</h4><b>1401 Wilmington Pike</b><br>West Chester, PA 19382<br><a href="tel:6106922200">(610) 692-2200</a></div>
+      <div class="fcol"><h4>Hatboro</h4><b>201 S York Rd</b><br>Hatboro, PA 19040<br><a href="tel:2156745811">(215) 674-5811</a></div>
+      <div class="fcol"><h4>Hours & Links</h4>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat–Sun: Closed<br><br>
+        <a href="services.html">Services</a><a href="locations.html">Locations</a><a href="appointments.html">Appointments</a></div>
+    </div>
+    <div class="copyright">© 1986–2026 Heilman Auto Service. Ardmore · West Chester · Hatboro, PA. &nbsp;|&nbsp; Mockup — proposed redesign.</div>
+  </div>
+</footer>
+<script>
+document.querySelector('.burger').addEventListener('click',function(){var m=document.querySelector('.menu');m.style.display=(m.style.display==='flex')?'none':'flex';m.style.position='absolute';m.style.top='84px';m.style.right='20px';m.style.flexDirection='column';m.style.background='#fff';m.style.padding='18px 22px';m.style.borderRadius='10px';m.style.gap='14px';m.style.boxShadow='0 10px 30px rgba(0,0,0,.15)';});
+</script>
+</body>
+</html>
