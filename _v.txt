@@ -1,0 +1,367 @@
+● THE HEILMAN PLAYBOOK
+
+
+Heilman Auto Group
+Ardmore · West Chester · Hatboro, Pennsylvania · Established 1986
+
+
+
+
+PREPARED FOR     Jack Heilman, Owner
+SUBJECT          Margin recovery & shop-floor efficiency
+DATE             June 2026
+
+
+Three core margin levers plus the moves that enable them, each modeled on conservative assumptions. Two
+require zero capital and can move this week. Every dollar figure is directional and should be re-run against live
+repair-order, payroll, and parts-invoice data before final commitment.
+
+
+
+W HAT'S INSIDE
+
+
+
+ 1     Margin Recovery Brief                                                                            ~$545K / yr
+       The three levers on one page — labor rate, shop supplies, Tekmetric — and the combined
+       opportunity.
+
+
+
+ 2     The Reason Why                                                                                        5 moves
+       Each recommendation stripped to the single justification an owner can repeat to a skeptic.
+
+
+
+ 3     Calculator Snapshots                                                                                3 models
+       The inputs and headline math behind each lever — labor rate, Tekmetric ROI, shop supplies fee.
+
+
+These projections use conservative baselines — 9 productive techs, a 50-week year, and current volume of ~600 ROs/month.
+The math holds up, but run it against exact payroll and parts-invoice data before pulling the trigger. Each lever stands
+alone; the Shop Supplies recovery is counted once and kept out of the Tekmetric figure, so nothing is double-counted.
+Heilman Auto Group                                                                                                                 THE HEILMAN PLAYBOOK
+Ardmore · West Chester · Hatboro, PA · Est. 1986                                                                                     M ARGIN RECOVERY BRIEF
+
+
+Three independent levers, each modeled on conservative inputs. The numbers below are directional — every figure is adjustable in the live
+calculators and should be re-run against real RO, payroll, and parts-invoice data before final commitment.
+
+    1                                                    2                                                      3
+
+    Labor Rate Update                                   Shop Supplies Fee                                      Tekmetric Shop System
+    $139 → $170 / hr                                    7% of labor · capped $40                               ~$1,500/mo (est.) · 3 locations
+
+
+    +$446K                                              +$54K                                                  8.6 days
+    per year · +$37.2K/mo                               per year · +$4.5K/mo                                   to pay for itself / month
+
+     • Nearly all margin — almost no added cost          • No upfront cost — automated by the                    • $3.48 back on every $1
+     • 14,400 billed hrs × $31 uplift                      system                                                • +$44.5K/yr net — labor recovery alone
+     • Same wrenches, same bays                          • Recovers consumables automatically &                  • Bulletproof PA-compliant audit trail
+                                                           seamlessly
+     • Needs: online booking + proof of your real                                                                • Idle-bay + collections = pure upside
+       rate                                              • Recovers consumables without small line
+                                                           items
+                                                         • Trust win + margin in one move
+
+
+
+
+    COMBINED ANNUAL OPPORTUNITY — DIRECTIONAL, SEPARATE LEVERS, NO DOUBLE- COUNT
+                                                                                                                            ~$545K / yr
+                    Labor Rate      + $446,400
+
+                Shop Supplies       + $53,712
+
+               Tekmetric (net)      + $44,550
+
+
+
+EXECUTION SEQUENCE                                                                          NON-NEGOTIABLE: PA COMPLIANCE
+
+1    Pilot Tekmetric — start now. Run it at a single shop first; it hardcodes the
+                                                                                               ITEMIZE AND DOCUMENT.
+     supplies fee and authorizations, so there's no manual error. Techs use their own
+                                                                                               Every estimate must be exact, itemized, and carry documented
+     phones, so there's no tablet to buy. Pays for itself by the 9th.
+                                                                                               pre-authorization. A disputed estimate without signed
+2    Shop Supplies Fee — once the system's in. Let Tekmetric auto-apply the 7%                 authorization loses 100% of the time. The shop-supplies fee must
+     (capped $40) so it's exact and PA-compliant every time. Disclose on the estimate          appear as its own disclosed line. Tekmetric's timestamped digital
+     and with signage.                                                                         authorization turns that compliance risk into a documented,
+3    Labor rate to $170 — once the new site and proof of your real rate are in                 protected record.
+     hand. The big lever. Roll it out alongside the video inspection — not the same
+     month as the supplies fee — so customers see new value, not just a higher price.
+
+
+Conservative baselines; key inputs (proficiency, volume, system cost) are estimates — confirm against live data before committing. Levers
+don't double-count. · Heilman Auto Group
+Heilman Auto Group                                                                                                                           THE REASON WHY
+Ardmore · West Chester · Hatboro, PA · Est. 1986                                                                             O NE JUSTIFICATION PER MOVE
+
+
+
+These build on the reputation Jack and the team have spent nearly four decades earning. None of them change what works — they carry that hard-
+won trust forward into how the shops price, book, and protect their work. Each move, with the one reason it earns its place.
+
+
+    1    Raise the labor rate — $139 → $170/hr
+         Nearly all margin · +$446K/yr
+         A brand-new shop nearby just opened at $170/hr, and comparable Main Line and Chester County independents have already climbed past our
+         current rate. We've held steady for years — but four decades of earned trust have more than justified the right to match the market. Moving to $170
+         adds almost no cost — no extra parts, labor, or bay time — so nearly all of it drops to the bottom line.
+
+            BOTTOM LINE
+            This isn't reaching — it's catching up to a market that's already moved past us.
+
+
+
+    2    Roll fluids into a Shop Supplies Fee — 7% of labor, capped $40
+         No upfront cost · +$54K/yr · automated by the system
+         Itemizing small consumables like washer fluid or a half-quart of oil recovers pennies, but it can rub a loyal customer the wrong way. Rolling them
+         into a single capped shop-supplies fee recovers the same cost quietly across the ticket — and frees the team to keep giving away the small stuff
+         that builds goodwill, the goodwill that brings the $1,500 jobs back.
+
+            BOTTOM LINE
+            A small structural fee protects the margin and the relationship at the same time.
+
+
+
+    3    Add a shop-management system across all 3 shops
+         ~$1,500/mo (est.) · pays for itself by the 9th · $3.48 back per $1
+         The shops have run on paper and built a loyal following doing it — but across three locations, paper makes it easy to lose the last 0.2 hours of diag
+         or cleanup, and it can't timestamp a digital authorization. A system like Tekmetric captures that work automatically, ends the phone-vs-online
+         double-bookings that leave bays idle, and turns every authorization into a clean, PA-compliant record. The recovered time alone covers the cost in
+         the first week and a half of each month.
+
+            BOTTOM LINE
+            Paper got the shops this far. A system is what lets them grow without losing the details.
+
+
+
+    4    End free diagnostics — every diagnosis starts at one hour ($170)
+         $100 → $170 · higher close rate on the repair that follows
+         No more free code scans or "we'll take a quick look." Every diagnosis now starts at one full hour of labor — $170 — because it uses the most
+         expensive tools and the most skilled hands in the building, and that hour matches the fee to the skill it takes to trace a CAN-bus fault or EVAP leak.
+         Pairing it with a video multi-point inspection — built right into Tekmetric's DVI — makes that fee easy to understand: the tech records the fault
+         on their own phone and sends it straight to the customer, and when they see the problem on screen, they approve the repair with confidence.
+
+            BOTTOM LINE
+            No free scans. Charge for the expertise — and let the video prove it's worth every penny.
+
+
+
+    5    Modernize online booking — the redesign's already built
+         Mockup done · connect to the shop system next
+         The current website has served the shops well, but it leaves money on the table — it can't take a PA-compliant digital authorization or deliver the
+         video inspection that lifts the average repair order. The new version keeps the original 1986 logo and branding, and lets a customer book in two
+         taps, feeding straight into the shop system so there's no more phone tag. (Already mocked up and ready to show, with the real shop photos and
+         customer reviews front and center.)
+
+            BOTTOM LINE
+            The redesign is built on the brand you've always had. Connect it to the shop system and it goes live.
+
+
+Heilman Auto Group   ·   Conservative and assumption-driven — re-run against
+Heilman Auto Group                                                                                                    ROLLING IT OUT RIGHT
+Ardmore · West Chester · Hatboro, PA · Est. 1986                                                                 L OW-RISK · CUSTOMER-FIRST
+
+
+
+A good plan dies on the shop floor if it's rushed. These four moves protect the regulars, the crew, and the front desk — so the numbers in
+this playbook actually show up in the bank.
+
+
+    1     Start with one shop — prove it, then expand
+          30-day pilot · then roll to the other two
+          Don't flip all three locations at once. Run the new shop system and pricing at one shop first, iron out the kinks, and show the
+          revenue lift over 30 days. Then take that real, in-house proof to the other two — the older techs and writers adjust on a small stage,
+          not all at once, and you've got numbers instead of a promise.
+
+            BOTTOM LINE
+            One shop, 30 days, real proof — then scale what already worked.
+
+
+
+
+    2     Protect the loyalists — a 90-day grandfather
+          New rate for new customers now · regulars eased in
+
+          The $170 rate applies to new customers immediately. For the 20- and 30-year regulars, the writer can say: "Our rate moved to
+          $170, but Jack wanted to honor your old rate for today's service." It makes Jack the hero, moves the customer mentally to the new
+          number, and gets the shop to $170 over 90 days without burning a single bridge.
+
+            BOTTOM LINE
+            Loyal customers feel taken care of, not cashed in on.
+
+
+
+
+    3     Arm the front desk — or they'll discount it away
+          One confident sentence per new charge
+          A service writer who can't explain a fee will give it away to avoid conflict — and there go the margins. Give them simple, confident
+          lines:
+
+            Supplies fee: "That's our shop-supplies & disposal charge — it covers fluids, rags, and cleanup so we're not nickel-and-diming you
+            on every little item."
+
+
+            Diagnostic (no free scans): "Our diagnostic starts at one hour — that's a master tech tracing the exact cause, not a parts-guess —
+            and you'll get a video showing the problem before you approve any repair."
+
+            BOTTOM LINE
+            Train the words, or the margin walks out the front door.
+
+
+
+
+    4     Sequence the changes — never all at once
+          Fee + system first · rate later, with the video
+          Roll the supplies fee and the shop system in first — they're quiet and customers barely notice. Bring the rate increase later,
+          launched alongside the video inspection, so customers see obvious new value, not just a higher price. Never the new rate and the
+          new fee in the same month — that's the one combination that triggers sticker shock.
+
+            BOTTOM LINE
+            Stagger it so every price change arrives with visible new value.
+
+
+
+Pairs with the Margin Recovery Brief and The Reason Why. Roll out small, protect the regulars, arm the front desk — that's how
+the projected margin becomes real money. | Heilman Auto Group
+Heilman Auto Group                                                                                 CALCULATOR SNAPSHOT 1 / 3
+Ardmore · West Chester · Hatboro, PA                                                                        E FFECTIVE LABOR RATE
+
+
+
+
+Effective Labor Rate — Revenue Recovery
+What an hour at $170 instead of $139 brings back.
+
+
+INPUTS
+
+
+  PRODUCTIVE TECHS                             BILLED HRS / TECH / WEEK                     WORKING WEEKS / YEAR
+
+  9                                            32                                           50
+
+
+  CURRENT RATE                                 PROPOSED RATE                                ANNUAL BILLED HOURS
+
+  $139                                         $170                                         14,400
+
+
+
+   REVENUE RECOVERY — SAME WRENCHES, SAME BAYS
+
+
+               ADDED / MONTH                               ADDED / YEAR                                ADDED MARGIN
+
+
+          $37,200                                   $446,400                                           ~95%
+
+Current revenue @ $139 (14,400 hrs)                                                                                  $2,001,600
+
+Proposed revenue @ $170                                                                                              $2,448,000
+
+Recovered gross margin / year                                                                                     + $446,400
+
+    BOTTOM LINE
+    The rate increase carries almost no added cost — no extra parts, labor, or bay time. It's the
+    highest-margin lever on the board.
+
+
+The added revenue is simply your billed hours × the $31 rate increase. Calculated exactly to the penny; replace inputs with live shop
+data before commitment.
+Heilman Auto Group                                                                                 CALCULATOR SNAPSHOT 2 / 3
+Ardmore · West Chester · Hatboro, PA                                                                                 T EKMETRIC ROI
+
+
+
+
+Tekmetric ROI — Days to Payback
+Conservative, labor-recovery only. Consumables counted once in the Shop Supplies model, so nothing is double-counted.
+
+
+INPUTS
+
+
+  COST / LOCATION / MONTH                      LOCATIONS                                    SYSTEM COST / MONTH (EST.)
+
+  $500                                         3                                            $1,500
+
+
+
+  PRODUCTIVE TECHS                             LOST HRS / TECH / WEEK                       LABOR RATE · WEEKS
+
+  9                                            1.0                                          $139 · 50
+
+
+
+
+   IT PAYS FOR ITSELF IN THE FIRST WEEK AND A HALF OF EVERY MONTH
+
+
+              DAYS TO PAYBACK                           RETURN / $1 SPENT                               BREAK-EVEN
+
+
+                  8.6                                    $3.48                                   10.8 hrs/mo
+
+
+Recovered unbilled labor / year                                                                                       + $62,550
+
+Tekmetric system cost / year                                                                                          – $18,000
+
+Net annual gain                                                                                                     + $44,550
+
+    BOTTOM LINE
+    Paper got the shops this far — a system captures the work paper can't, and pays for itself by the
+    9th. Not counted here, all upside: idle-bay recovery, faster collections, and the PA-compliant
+    audit trail.
+
+
+Based on recovering just 1.0 lost hour per tech per week — on paper it's easy to miss the last 0.2 hours of diag or cleanup.
+Capturing that time alone covers the system's monthly cost by the 9th of every month; everything else — idle-bay recovery and faster
+collections — is pure upside.
+Heilman Auto Group                                                             CALCULATOR SNAPSHOT 3 / 3
+Ardmore · West Chester · Hatboro, PA                                                        S HOP SUPPLIES FEE
+
+
+
+
+Shop Supplies Fee — Margin & Goodwill
+Recover consumables automatically while giving away the $3 top-offs.
+
+
+INPUTS
+
+
+  REPAIR ORDERS / MONTH                     AVG LABOR / RO               CONSUMABLES / RO
+
+  600                                       $278                         $12
+
+
+  FEE — % OF LABOR                          HARD CAP / RO                BREAK-EVEN FEE %
+
+  7.0%                                      $40                          4.3%
+
+
+
+   NET MARGIN AFTER RECOVERING CONSUMABLES COST
+
+
+            NET / REPAIR ORDER                          NET / MONTH                NET / YEAR
+
+
+              $7.46                                 $4,476                     $53,712
+
+Fee charged / RO (7% of $278, under cap)                                                             $19.46
+
+Consumables cost recovered / RO                                                                   – $12.00
+
+Net margin / RO                                                                                   + $7.46
+
+    BOTTOM LINE
+    A small structural fee protects the margin and the relationship at the same time. No capital — the
+    system applies it automatically.
+
