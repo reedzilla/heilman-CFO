@@ -19,26 +19,26 @@
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root{
-    --navy:#0e2342;--navy2:#163a66;--ink:#0e2342;--body:#33414f;--steel:#64748b;
+    --navy:#0e2342;--navy2:#163a66;--ink:#0e2342;--body:#33414f;--steel:#475569;
     --line:#e3e8ee;--soft:#f4f7fb;--white:#fff;--red:#c8102e;--red2:#a30d25;
     --blue:#13386e;--blue2:#1c4f9c;--sky:#9cc0ec;
     --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--body);line-height:1.6;background:#fff;font-size:16px}
+  body{font-family:var(--sans);color:var(--body);line-height:1.6;background:#fff;font-size:17px}
   h1,h2,h3,h4{color:var(--ink);line-height:1.15;font-weight:800;letter-spacing:-.01em}
   a{text-decoration:none;color:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
   .narrow{max-width:920px}
   section{padding:70px 0}
-  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:700;padding:13px 22px;border-radius:8px;font-size:15px;transition:.15s;border:2px solid var(--red);cursor:pointer}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:800;letter-spacing:.02em;padding:13px 22px;border-radius:8px;font-size:15px;transition:.15s;border:2px solid var(--red);cursor:pointer}
   .btn:hover{background:var(--red2);border-color:var(--red2)}
   .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
   .btn.blue{background:var(--blue);border-color:var(--blue);color:#fff}.btn.blue:hover{background:var(--blue2);border-color:var(--blue2)}
   .btn.white{background:#fff;color:var(--blue);border-color:#fff}.btn.white:hover{background:#eef3fa}
   .btn.big{font-size:17px;padding:16px 30px}
-  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--red)}
+  .eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--blue)}
   .sec-head{text-align:center;max-width:740px;margin:0 auto 44px}
   .sec-head h2{font-size:clamp(25px,3.3vw,36px);margin:10px 0 12px}.sec-head p{font-size:17px;color:var(--steel)}
   header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 2px 12px rgba(14,35,66,.08)}
@@ -48,7 +48,7 @@
   .menu a{color:#1f2d3d;font-size:14.5px;font-weight:700}.menu a:hover{color:var(--red)}
   .menu .btn{color:#fff;padding:11px 20px}
   .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}.burger span{width:26px;height:3px;background:var(--blue);border-radius:2px}
-  .hero{position:relative;color:#fff;overflow:hidden;background:#13386e}
+  .hero{position:relative;color:#fff;overflow:hidden;background:#111}
   .hero .slides{position:absolute;inset:0;z-index:0}
   .hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease;background-size:cover;background-position:center}
   .hero .slide.on{opacity:1}
@@ -99,7 +99,7 @@
   .extra{margin-top:30px}.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .panel{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:30px}.panel h3{font-size:20px;margin-bottom:8px}.panel p{color:var(--steel);font-size:14.5px;margin-bottom:14px}
   .chips{display:flex;flex-wrap:wrap;gap:10px}.chip{background:#fff;border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--blue)}
-  .note{font-size:12.5px;color:var(--steel);margin-top:12px;font-style:italic}
+  .note{font-size:13px;color:var(--steel);margin-top:12px;font-style:italic}
   .insp{background:var(--navy);color:#fff}.insp .sec-head h2{color:#fff}.insp .sec-head p{color:var(--sky)}
   .ilist{columns:2;column-gap:40px;max-width:900px;margin:0 auto}
   .ilist .i{break-inside:avoid;display:flex;gap:11px;padding:8px 0;font-size:14.5px;color:#dbe4f0;border-bottom:1px solid rgba(255,255,255,.08)}.ilist .i b{color:var(--sky);font-weight:900}
@@ -111,17 +111,17 @@
   .phone .screen{background:linear-gradient(160deg,#1b3358,#0e2342);border-radius:20px;aspect-ratio:9/16;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
   .phone .play{width:64px;height:64px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 8px 26px rgba(200,16,46,.5)}.phone .play:after{content:"";border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
   .phone .cap{font-size:13px;color:#aebccd;padding:0 24px;text-align:center}
-  .phone .tag{position:absolute;top:14px;left:14px;background:var(--red);font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:5px;text-transform:uppercase;color:#fff}
+  .phone .tag{position:absolute;top:14px;left:14px;background:var(--red);font-size:13px;font-weight:700;letter-spacing:.08em;padding:4px 9px;border-radius:5px;text-transform:uppercase;color:#fff}
   .locs{background:var(--soft)}
   .locblock{padding:34px 0;border-bottom:1px solid var(--line)}.locblock:last-child{border-bottom:none}
   .locblock .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .locblock.alt .photo{order:2}
   .photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(14,35,66,.14);aspect-ratio:4/3;background:#111 center/cover no-repeat}
   .p-ard{background-image:url('shop-ardmore.jpg')}.p-wc{background-image:url('shop-westchester.jpg')}.p-hat{background-image:url('shop-hatboro.jpg')}
-  .info .tone{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-block;padding:5px 14px;border-radius:30px;margin-bottom:12px}
+  .info .tone{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-block;padding:5px 14px;border-radius:30px;margin-bottom:12px}
   .tone.b{background:var(--blue)}.tone.r{background:var(--red)}.tone.b2{background:var(--blue2)}
   .info h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:10px}.info p.copy{font-size:15px;color:var(--body);margin-bottom:16px}
-  .meta{font-size:14.5px;margin-bottom:6px}.meta .lab{color:var(--steel);font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  .meta{font-size:14.5px;margin-bottom:6px}.meta .lab{color:var(--steel);font-size:13px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
   .ph{font-size:20px;font-weight:800;color:var(--blue);margin:8px 0 16px}
   .btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
   .map{border:0;width:100%;height:210px;border-radius:12px}
@@ -146,7 +146,7 @@
   .sv:hover{box-shadow:0 6px 18px rgba(0,0,0,.18)}.sv.sel{border-color:var(--red);background:#fff5f6}
   .sv .bx{width:22px;height:22px;border:2px solid var(--line);border-radius:5px;flex:none;display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:14px}
   .sv.sel .bx{background:var(--red);border-color:var(--red)}
-  .sv .ic{font-size:22px;flex:none}.sv .t{font-weight:800;color:var(--ink);font-size:15px}.sv .d{font-size:12.5px;color:var(--steel)}
+  .sv .ic{font-size:22px;flex:none}.sv .t{font-weight:800;color:var(--ink);font-size:15px}.sv .d{font-size:13px;color:var(--steel)}
   .bkfoot{max-width:900px;margin:22px auto 0;text-align:center}
   .confirm{max-width:620px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;text-align:center;color:var(--body)}
   .confirm .ck{width:64px;height:64px;border-radius:50%;background:#1a7f37;color:#fff;font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
@@ -162,7 +162,7 @@
   .ftag{text-align:center;color:#8298b3;margin-bottom:36px}
   .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;border-top:1px solid rgba(255,255,255,.1);padding-top:32px}
   .fgrid h4{color:#fff;font-size:14px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}.fgrid a{display:block;color:#9fb0c2;padding:3px 0}.fgrid a:hover{color:#fff}.fcol b{color:#fff}
-  .copyright{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#6b7c90}
+  .copyright{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#6b7c90}
   /* MEET THE TEAM */
   .team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
   .tc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 22px;text-align:center;box-shadow:0 10px 30px rgba(14,35,66,.05)}
@@ -195,7 +195,7 @@ h3,h4{font-family:'Barlow','Barlow Condensed',sans-serif}
 .menu a{transition:color .15s}
 .menu a:hover{color:var(--red);text-decoration:underline}
 a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--blue2);outline-offset:2px}
-.opennow{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--blue);white-space:nowrap}
+.opennow{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);white-space:nowrap}
 .opennow .dot{width:9px;height:9px;border-radius:50%;background:#1a7f37;display:inline-block}
 .opennow.closed{color:var(--steel)}.opennow.closed .dot{background:var(--red)}
 .hcall{display:inline-flex;align-items:center;gap:4px;font-weight:800;color:var(--blue);font-size:14.5px}
@@ -206,7 +206,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
 .ratecard{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
 .ratecard .twn{font-weight:800;color:var(--blue);font-size:13px}
 .ratecard .sc{font-family:'Barlow Condensed',var(--mono);font-weight:700;color:var(--ink);font-size:22px;line-height:1.1}
-.ratecard .st{color:#f2a93b;font-size:13px;letter-spacing:1px}.ratecard .ct{color:var(--steel);font-size:11.5px}
+.ratecard .st{color:#f2a93b;font-size:13px;letter-spacing:1px}.ratecard .ct{color:var(--steel);font-size:13px}
 .mobilebar{display:none}.callsheet{display:none}
 @media(max-width:860px){
   .mobilebar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;box-shadow:0 -4px 18px rgba(0,0,0,.18)}
@@ -221,7 +221,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
   .ratecards{grid-template-columns:1fr;max-width:340px}
 }
 @media(prefers-reduced-motion:reduce){.hero .slide{transition:none!important}html{scroll-behavior:auto!important}}
-</style>
+header{background:rgba(255,255,255,.9)!important;-webkit-backdrop-filter:saturate(180%) blur(12px);backdrop-filter:saturate(180%) blur(12px)}.scard,.tcard,.am,.val,.qc,.lc{transition:transform .18s ease,box-shadow .18s ease}.scard:hover,.tcard:hover,.am:hover,.val:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(14,35,66,.16)}.qc:hover,.lc:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.28)}</style>
 </head>
 <body>
 <header>
@@ -286,7 +286,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
 </section>
 
 
-<div class="mobilebar"><a class="mb-call" href="#" onclick="openCallSheet();return false;"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a><a class="mb-book" href="appointments.html">📅 Book Online</a></div><div class="callsheet" id="callSheet" onclick="closeCallSheet()"><div class="cs-inner" onclick="event.stopPropagation()"><div class="cs-title">Call your nearest shop</div><a href="tel:6106491991">Ardmore — (610) 649-1991</a><a href="tel:6106922200">West Chester — (610) 692-2200</a><a href="tel:2156745811">Hatboro — (215) 674-5811</a><button onclick="closeCallSheet()">Cancel</button></div></div>
+<div class="mobilebar"><a class="mb-call" href="#" onclick="openCallSheet();return false;"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a><a class="mb-book" href="appointments.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg> Book Online</a></div><div class="callsheet" id="callSheet" onclick="closeCallSheet()"><div class="cs-inner" onclick="event.stopPropagation()"><div class="cs-title">Call your nearest shop</div><a href="tel:6106491991">Ardmore — (610) 649-1991</a><a href="tel:6106922200">West Chester — (610) 692-2200</a><a href="tel:2156745811">Hatboro — (215) 674-5811</a><button onclick="closeCallSheet()">Cancel</button></div></div>
 <footer>
   <div class="wrap">
     <img class="footlogo" src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';">
