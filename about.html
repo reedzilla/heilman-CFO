@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book an Appointment — Heilman Auto Service</title>
-<meta name="description" content="Book online in two taps — pick your shop, pick your service, you're booked.">
+<title>About — Heilman Auto Service</title>
+<meta name="description" content="The Heilman Difference: family-owned since 1986, certified used cars, and careers.">
 <meta name="robots" content="noindex">
 <style>
   :root{
@@ -179,60 +179,77 @@
   <div class="wrap nav">
     <a href="index.html" class="logo"><img src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="fallback">HEILMAN AUTO SERVICE</span></a>
     <nav class="menu">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="locations.html">Locations</a><a href="about.html">About</a><a href="appointments.html" class="btn">Schedule Here!</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="locations.html">Locations</a><a href="about.html" style="color:var(--red)">About</a><a href="appointments.html" class="btn">Schedule Here!</a>
     </nav>
     <div class="burger"><span></span><span></span><span></span></div>
   </div>
 </header>
-<!-- APPOINTMENTS — 2-STEP BOOKING -->
-<section class="appt" id="book">
-  <div class="wrap narrow">
-    <div class="sec-head"><div class="eyebrow" style="color:var(--sky)">Real-Time Online Booking</div><h2 style="color:#fff">Click. Book. Fixed.</h2><p style="color:var(--sky)">No phone tag. Pick your shop, pick your service — you're booked.</p></div>
-
-    <!-- STEP 1 -->
-    <div class="bkstep active" id="bk1">
-      <div class="bkhead">Choose a Location</div>
-      <div class="bksub">Select a shop to get started.</div>
-      <div class="loccards">
-        <div class="lc"><div class="pin">📍</div><h4>Ardmore</h4><div class="ad">301 W Lancaster Ave</div><div class="ph2">(610) 649-1991</div><button class="pick" onclick="bkLoc('Ardmore')">Book Appointment</button></div>
-        <div class="lc"><div class="pin">📍</div><h4>West Chester</h4><div class="ad">1401 Wilmington Pike</div><div class="ph2">(610) 692-2200</div><button class="pick" onclick="bkLoc('West Chester')">Book Appointment</button></div>
-        <div class="lc"><div class="pin">📍</div><h4>Hatboro</h4><div class="ad">201 S York Rd</div><div class="ph2">(215) 674-5811</div><button class="pick" onclick="bkLoc('Hatboro')">Book Appointment</button></div>
+<!-- THE HEILMAN DIFFERENCE -->
+<section class="diff">
+  <div class="wrap">
+    <div class="dsplit">
+      <div class="dphoto"></div>
+      <div>
+        <div class="eyebrow">The Heilman Difference</div>
+        <h2 style="font-size:clamp(25px,3.2vw,34px);margin:8px 0 14px">Built on One Goal Since 1986</h2>
+        <p style="color:var(--body);font-size:16px;margin-bottom:4px">In 1986, Heilman Automotive was established by two brothers who had one goal in mind: to help people and their automotive needs. While we specialize in Automotive Repair, our main goal is to help our customers feel secure in their automotive situation. We believe there is no magic to providing great service, and pride ourselves on making sure we excel in these four areas:</p>
+        <h3 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 2px">Four Reasons People Love Heilman's</h3>
+        <div class="vlist">
+          <div class="vitem"><span class="vc">✓</span><div><b>Honesty &amp; Integrity</b><span>We tell you the truth, and show it to you on video.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Quality Care</b><span>Master-tech work, backed by our 12-month / 12,000-mile warranty.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Convenient Service</b><span>Online scheduling, fast turnaround, three local shops.</span></div></div>
+          <div class="vitem"><span class="vc">✓</span><div><b>Friendly Team</b><span>People who've been here 10, 20, 30+ years and treat you right.</span></div></div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- STEP 2 -->
-    <div class="bkstep" id="bk2">
-      <div class="bkbar"><span class="back" onclick="bkStep(1)">← Change location</span><span class="pill" id="bkLocPill">Ardmore</span></div>
-      <div class="bkhead">Select One or More Services</div>
-      <div class="bksub">Tap everything you need — then continue.</div>
-      <div class="svtiles">
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛢️</span><div><div class="t">Oil Change</div><div class="d">Keep your engine smooth with our fast oil change.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">✅</span><div><div class="t">PA State Inspection</div><div class="d">Safety & emissions — done right, done fast.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🗓️</span><div><div class="t">Scheduled Maintenance</div><div class="d">Factory-scheduled service to keep you in top shape.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛞</span><div><div class="t">Tires & Wheels</div><div class="d">Tire repair and replacement for safety and wear.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🛑</span><div><div class="t">Brakes</div><div class="d">Brake inspection and repair you can rely on.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">❄️</span><div><div class="t">A/C & Heating</div><div class="d">Stay comfortable in every season.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">⚠️</span><div><div class="t">Warning Light On</div><div class="d">We'll diagnose that dashboard light.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🔋</span><div><div class="t">Not Starting</div><div class="d">Quick diagnosis for no-start and battery issues.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">🔊</span><div><div class="t">Noise / Vibration</div><div class="d">Hear something? We'll find it — ride-along included.</div></div></div>
-        <div class="sv" onclick="bkSel(this)"><span class="bx"></span><span class="ic">💬</span><div><div class="t">Something Else</div><div class="d">Describe your issue and we'll take a look.</div></div></div>
-      </div>
-      <div class="bkfoot"><button class="btn big white" onclick="bkGo()">Continue to Confirm →</button></div>
+<!-- MEET THE TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Meet the Heilmans</div><h2>The Family Behind the Shop</h2><p>Two brothers started this back in 1986. Almost forty years later, it's still personal.</p></div>
+    <div class="team">
+      <div class="tc"><div class="avatar">JH</div><h4>Jack Heilman</h4><div class="role">Owner &amp; Co-Founder</div><p>Came up on the business side. Built Heilman on one promise: shoot straight with every customer, every single time.</p></div>
+      <div class="tc"><div class="avatar">JH</div><h4>Jim Heilman</h4><div class="role">Co-Founder · In Loving Memory</div><p>The wrench of the family. Jim set the standard for the honest, top-quality work all three shops still live by today.</p></div>
+      <div class="tc"><div class="avatar">★</div><h4>Our Managers &amp; Techs</h4><div class="role">10, 20, 30+ Years</div><p>Many of our crew have been here for decades. Come back and you'll see the same faces who know you and your car.</p></div>
     </div>
+    <p class="note" style="text-align:center;margin-top:18px">Photos coming soon — drop in real team photos here.</p>
+  </div>
+</section>
 
-    <!-- STEP 3 -->
-    <div class="bkstep" id="bk3">
-      <div class="confirm">
-        <div class="ck">✓</div>
-        <h3>You're Almost Booked!</h3>
-        <p>Here's what you picked. We'll text you to lock in the exact time — usually within the hour during business hours.</p>
-        <div class="summary" id="bkSummary"></div>
-        <p style="font-size:13px">And remember: before any work begins, you'll get a video showing exactly what we see. No surprises.</p>
-        <button class="btn" onclick="bkStep(1)">Start Over</button>
-      </div>
+<!-- OFFERS + FINANCING -->
+<section class="why" id="offers">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Offers &amp; Financing</div><h2>A Little Something to Get You In the Door</h2></div>
+    <div class="offers">
+      <div class="of"><div class="big">New Neighbor?</div><p>$25 off your first visit with us. Welcome to the family.</p></div>
+      <div class="of"><div class="big">Seasonal Check-Up</div><p>Heading into summer or winter? Ask about our seasonal safety check.</p></div>
+      <div class="of"><div class="big">Multi-Car Families</div><p>More than one car in the driveway? Ask us about looking after all of them.</p></div>
     </div>
+    <div class="fin">
+      <div><h3>Big repair? Spread it out.</h3><p>A safe car shouldn't have to wait for payday. Ask about our financing options — say yes to the work your car actually needs and pay over time.</p></div>
+      <a href="appointments.html" class="btn">Ask About Financing</a>
+    </div>
+  </div>
+</section>
 
-    <div class="bkfoot" style="margin-top:24px"><span style="color:var(--sky);font-size:14px">Prefer to talk? Call Ardmore (610) 649-1991 · West Chester (610) 692-2200 · Hatboro (215) 674-5811 · Mon–Fri 7–6</span></div>
+<!-- CARS + CAREERS -->
+<section class="locs">
+  <div class="wrap split">
+    <div class="pnl" id="cars">
+      <div class="eyebrow">Certified Used Cars</div>
+      <h3>Buy From a Shop That Knows the Car</h3>
+      <p>Every certified used vehicle on our lot has been through the same bay and the same master techs that service your car. We don't sell what we wouldn't drive — and we'll show you its condition report, same as always.</p>
+      <a href="#" class="btn blue">Browse Current Inventory</a>
+    </div>
+    <div class="pnl dark" id="careers">
+      <div class="eyebrow">Now Hiring</div>
+      <h3>Join the Heilman Team</h3>
+      <p>35+ years building careers, not just filling shifts. Top compensation in the area, plus the benefits you actually want:</p>
+      <ul><li>Paid vacation, sick days &amp; holidays</li><li>401(k) and health insurance</li><li>Ongoing training &amp; career development</li><li>A clean, modern shop that's always busy</li></ul>
+      <a href="#" class="btn">Apply Today</a>
+    </div>
   </div>
 </section>
 
@@ -252,8 +269,6 @@
 </footer>
 <script>
 document.querySelector('.burger').addEventListener('click',function(){var m=document.querySelector('.menu');m.style.display=(m.style.display==='flex')?'none':'flex';m.style.position='absolute';m.style.top='84px';m.style.right='20px';m.style.flexDirection='column';m.style.background='#fff';m.style.padding='18px 22px';m.style.borderRadius='10px';m.style.gap='14px';m.style.boxShadow='0 10px 30px rgba(0,0,0,.15)';});
-</script><script>
-var bkLocation='';function bkStep(n){document.querySelectorAll('.bkstep').forEach(function(s){s.classList.remove('active');});document.getElementById('bk'+n).classList.add('active');document.getElementById('book').scrollIntoView({behavior:'smooth'});}function bkLoc(name){bkLocation=name;document.getElementById('bkLocPill').textContent=name;bkStep(2);}function bkSel(el){el.classList.toggle('sel');el.querySelector('.bx').textContent=el.classList.contains('sel')?'✓':'';}function bkGo(){var picks=[];document.querySelectorAll('#bk2 .sv.sel .t').forEach(function(t){picks.push(t.textContent);});if(picks.length===0){alert('Please tap at least one service.');return;}document.getElementById('bkSummary').innerHTML='<b>Location:</b> '+bkLocation+'<br><b>Services:</b> '+picks.join(', ');bkStep(3);}
 </script>
 </body>
 </html>
