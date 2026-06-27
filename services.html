@@ -9,8 +9,8 @@
 <title>Services — Heilman Auto Service</title>
 <meta name="description" content="Inspection, oil changes, diagnostics &amp; repair — with a 21-point video inspection on every visit.">
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/webp" href="logo.webp">
-<link rel="apple-touch-icon" href="logo.webp">
+<link rel="icon" type="image/webp" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Services — Heilman Auto Service">
 <meta property="og:description" content="Inspection, oil changes, diagnostics &amp; repair — with a 21-point video inspection on every visit.">
@@ -52,9 +52,9 @@
   .hero .slides{position:absolute;inset:0;z-index:0}
   .hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.3s ease;background-size:cover;background-position:center}
   .hero .slide.on{opacity:1}
-  .hero .s1{background-color:#13386e;background-image:url('shop-ardmore.webp')}
-  .hero .s2{background-color:#0e2342;background-image:url('shop-westchester.webp')}
-  .hero .s3{background-color:#1c4f9c;background-image:url('shop-hatboro.webp')}
+  .hero .s1{background-color:#111;background-image:url('shop-ardmore.jpg')}
+  .hero .s2{background-color:#111;background-image:url('shop-westchester.jpg')}
+  .hero .s3{background-color:#111;background-image:url('shop-hatboro.jpg')}
   .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 100%)}
   .hero .locbadge{position:absolute;top:20px;right:24px;z-index:3;background:rgba(200,16,46,.92);color:#fff;font-weight:700;font-size:13px;padding:7px 16px;border-radius:30px}
   .hero .dots{position:absolute;bottom:20px;left:0;right:0;z-index:3;display:flex;gap:11px;justify-content:center}
@@ -116,8 +116,8 @@
   .locblock{padding:34px 0;border-bottom:1px solid var(--line)}.locblock:last-child{border-bottom:none}
   .locblock .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .locblock.alt .photo{order:2}
-  .photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(14,35,66,.14);aspect-ratio:4/3;background:#13386e center/cover no-repeat}
-  .p-ard{background-image:url('shop-ardmore.webp')}.p-wc{background-image:url('shop-westchester.webp')}.p-hat{background-image:url('shop-hatboro.webp')}
+  .photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(14,35,66,.14);aspect-ratio:4/3;background:#111 center/cover no-repeat}
+  .p-ard{background-image:url('shop-ardmore.jpg')}.p-wc{background-image:url('shop-westchester.jpg')}.p-hat{background-image:url('shop-hatboro.jpg')}
   .info .tone{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;display:inline-block;padding:5px 14px;border-radius:30px;margin-bottom:12px}
   .tone.b{background:var(--blue)}.tone.r{background:var(--red)}.tone.b2{background:var(--blue2)}
   .info h3{font-size:clamp(22px,2.6vw,28px);margin-bottom:10px}.info p.copy{font-size:15px;color:var(--body);margin-bottom:16px}
@@ -176,7 +176,7 @@
   .fin h3{color:#fff;font-size:22px;margin-bottom:4px}.fin p{color:#cfd9e6;font-size:14.5px;max-width:560px}
   /* DIFFERENCE SPLIT */
   .dsplit{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-  .dphoto{border-radius:14px;aspect-ratio:4/3;background:#13386e center/cover no-repeat;background-image:url('shopPics.webp');box-shadow:0 14px 40px rgba(14,35,66,.14)}
+  .dphoto{border-radius:14px;aspect-ratio:4/3;background:#111 center/cover no-repeat;background-image:url('shopPics.jpg');box-shadow:0 14px 40px rgba(14,35,66,.14)}
   .vlist{display:flex;flex-direction:column;gap:14px;margin-top:14px}
   .vitem{display:flex;gap:13px;align-items:flex-start}
   .vitem .vc{width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none;font-size:14px}
@@ -226,7 +226,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
 <body>
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="logo"><img src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="fallback">HEILMAN AUTO SERVICE</span></a>
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="Heilman Auto Service" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="fallback">HEILMAN AUTO SERVICE</span></a>
     <nav class="menu">
       <a href="index.html">Home</a><a href="services.html" style="color:var(--red)">Services</a><a href="locations.html">Locations</a><a href="about.html">About</a><span class="opennow" id="openNow"><span class="dot"></span><span id="openTxt"></span></span><a class="hcall" href="#" onclick="openCallSheet();return false;"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a><a href="appointments.html" class="btn">Schedule Here!</a>
     </nav>
@@ -315,7 +315,7 @@ a:focus-visible,.btn:focus-visible,button:focus-visible{outline:3px solid var(--
 <div class="mobilebar"><a class="mb-call" href="#" onclick="openCallSheet();return false;"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call</a><a class="mb-book" href="appointments.html">📅 Book Online</a></div><div class="callsheet" id="callSheet" onclick="closeCallSheet()"><div class="cs-inner" onclick="event.stopPropagation()"><div class="cs-title">Call your nearest shop</div><a href="tel:6106491991">Ardmore — (610) 649-1991</a><a href="tel:6106922200">West Chester — (610) 692-2200</a><a href="tel:2156745811">Hatboro — (215) 674-5811</a><button onclick="closeCallSheet()">Cancel</button></div></div>
 <footer>
   <div class="wrap">
-    <img class="footlogo" src="logo.webp" alt="Heilman Auto Service" onerror="this.style.display='none';">
+    <img class="footlogo" src="logo.jpg" alt="Heilman Auto Service" onerror="this.style.display='none';">
     <div class="ftag">Keeping Pennsylvania neighborhoods safe and on the road since 1986.</div>
     <div class="fgrid">
       <div class="fcol"><h4>Ardmore</h4><b>301 W Lancaster Ave</b><br>Ardmore, PA 19003<br><a href="tel:6106491991">(610) 649-1991</a></div>
